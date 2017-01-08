@@ -9,5 +9,17 @@ hasCJKLanguage: true
 metaDataFormat: "yaml"
 theme: "moony"
 
+menu:
+  主页:
+      - Name: "主页"
+        URL: "/"
+        weight: 1
+      - Name: "文章"
+        URL: "/archives/"
+        weight: 2
+      - Name: "简介"
+        URL: "/about/"
+        weight: 3
+
 params:
   dateformat: "Jan 2, 2006" # Optional
