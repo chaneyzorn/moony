@@ -1,0 +1,13 @@
+title: "吾月"
+subtitle: "何夜无月，逝者如斯"
+baseurl: "http://moonye.me/"
+
+languageCode: "zh-cn"
+defaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+
+metaDataFormat: "yaml"
+theme: "moony"
+
+params:
+  dateformat: "Jan 2, 2006" # Optional
