@@ -4,27 +4,23 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
             </div>
-
-            {{ if ne (len .Site.Menus) 0 }}
             <div id="navbar" class="collapse navbar-collapse">
-                {{ range .Site.Menus }}
                 <ul class="nav navbar-nav navbar-right">
-                    {{ range . }} {{ if .HasChildren }}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            {{ range .Children }}
-                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                            {{ end }}
-                        </ul>
+                    <li><a href="{{ .Site.BaseURL }}">主页</a></li>
+                    <li><a href="{{ .Site.BaseURL }}/archives/">文章<span class="badge">{{ len .Site.Sections.articles }}</span></a></li>
+                    <li><a href="{{ .Site.BaseURL }}">专题<span class="badge">{{ len .Site.Taxonomies.series }}</span></a></li>
+                    <li><a href="{{ .Site.BaseURL }}">项目<span class="badge">{{ len .Site.Taxonomies.projects }}</span></a></li>
+                    <li><a href="{{ .Site.BaseURL }}">关于</a></li>
+                    <li>
+                        <form class="navbar-form navbar-left form-inline" role="search">
+                            <div id="search-container" >
+                                <input type="text" id="search-input" class="form-control" placeholder="Search...">
+                                <ul id="results-container" class="list-group"></ul>
+                            </div>
+                        </form>
                     </li>
-                    {{ else }}
-                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }} {{ end }}
                 </ul>
-                {{ end }}
             </div>
-            {{ end }}
         </div>
     </nav>
 </header>

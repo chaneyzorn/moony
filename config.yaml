@@ -1,6 +1,6 @@
 title: "吾月"
 subtitle: "何夜无月，逝者如斯"
-baseurl: "http://moonye.me/"
+baseurl: "http://moonye.me"
 
 languageCode: "zh-cn"
 defaultContentLanguage: "zh-cn"
@@ -20,6 +20,12 @@ menu:
       - Name: "简介"
         URL: "/about/"
         weight: 3
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  series: "series"
+  project: "projects"
 
 params:
   dateformat: "Jan 2, 2006" # Optional
