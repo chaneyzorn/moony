@@ -1,9 +1,23 @@
 <footer class="l-footer">
     <div class="container">
-        <p>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>
-        <aside>
-            <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
-            <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
-        </aside>
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <div class="ui horizontal list">
+                    <div class="item"><a href="{{ .Site.BaseURL }}">主页</a></div>
+                    <div class="item"><a href="{{ .Site.BaseURL }}/archives/">文章<span class="badge">{{ len .Site.Sections.articles }}</span></a></div>
+                    <div class="item"><a href="{{ .Site.BaseURL }}">专题<span class="badge">{{ len .Site.Taxonomies.series }}</span></a></div>
+                    <div class="item"><a href="{{ .Site.BaseURL }}">项目<span class="badge">{{ len .Site.Taxonomies.projects }}</span></a></div>
+                    <div class="item"><a href="{{ .Site.BaseURL }}">关于</a></div>
+                </div>
+                <div id="footer-about">
+                    <p>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</p>
+                    <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+                    <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </footer>

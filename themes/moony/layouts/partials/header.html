@@ -1,25 +1,35 @@
 <header class="l-header">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ .Site.BaseURL }}">主页</a></li>
-                    <li><a href="{{ .Site.BaseURL }}/archives/">文章<span class="badge">{{ len .Site.Sections.articles }}</span></a></li>
-                    <li><a href="{{ .Site.BaseURL }}">专题<span class="badge">{{ len .Site.Taxonomies.series }}</span></a></li>
-                    <li><a href="{{ .Site.BaseURL }}">项目<span class="badge">{{ len .Site.Taxonomies.projects }}</span></a></li>
-                    <li><a href="{{ .Site.BaseURL }}">关于</a></li>
-                    <li>
-                        <form class="navbar-form navbar-left form-inline" role="search">
-                            <div id="search-container" >
-                                <input type="text" id="search-input" class="form-control" placeholder="Search...">
-                                <ul id="results-container" class="list-group"></ul>
+    <nav>
+        <div class="ui container">
+            <div class="ui circular labels">
+                <div class="ui top fixed menu">
+                    <a class="header item" href="{{ .Site.BaseURL }}">
+                        <i class="home icon"></i> {{ .Site.Title }}
+                    </a>
+                    <a class="item" href="{{ .Site.BaseURL }}">
+                        <i class="archive icon"></i> 文章 <span class="ui label">{{ len .Site.Sections.articles }}</span>
+                    </a>
+                    <a class="item" href="{{ .Site.BaseURL }}">
+                        <i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span>
+                    </a>
+                    <a class="item" href="{{ .Site.BaseURL }}">
+                        <i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span>
+                    </a>
+                    <a class="item" href="{{ .Site.BaseURL }}">
+                        <i class="grid layout icon"></i> 关于
+                    </a>
+                    <div class="right item">
+                        <form role="search">
+                            <div id="search-container">
+                                <div class="ui icon input">
+                                    <input type="text" id="search-input" placeholder="Search...">
+                                    <i class="circular search link icon"></i>
+                                </div>
+                                <ul style="margin-top: 0px; margin-bottom: 0px;" id="results-container"></ul>
                             </div>
                         </form>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
