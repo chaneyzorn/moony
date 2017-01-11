@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    {{ partial "meta.html" . }}
-    {{ block "meta" . }}{{ end }}
+
+<head>
+    {{ partial "meta.html" . }} {{ block "meta" . }}{{ end }}
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/solarized-light.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.css">
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
     <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
-  </head>
+</head>
 
-  <body>
+<body>
     {{ partial "header.html" . }}
     <main>
-      <div class="container">
-        {{ block "main" . }}{{ end }}
-      </div>
+        <div class="container">
+            {{ block "main" . }}{{ end }}
+        </div>
     </main>
     {{ partial "footer.html" . }}
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.js"></script>
     <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
     <script src="{{ .Site.BaseURL }}/js/jekyll-search.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script type="text/javascript">
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ .Site.BaseURL }}/search.json',
-        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: false,
-        exclude: ['Welcome']
-      })
+    <script>
+        hljs.initHighlightingOnLoad();
     </script>
-  </body>
+    <script>
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '{{ .Site.BaseURL }}/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+            noResultsText: 'No results found',
+            limit: 10,
+            fuzzy: false,
+            exclude: ['Welcome']
+        })
+    </script>
+    <script>
+        $('.ui.dropdown').dropdown({
+            on: 'hover'
+        });
+    </script>
+</body>
+
 </html>

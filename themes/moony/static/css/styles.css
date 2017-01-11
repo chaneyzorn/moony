@@ -1,3 +1,8 @@
 .ui.menu .item:before {
     background: rgba(255, 255, 255, 0)
 }
+
+#nav-menu {
+    padding-left: 10%;
+    padding-right: 10%;
+}

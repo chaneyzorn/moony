@@ -1,22 +1,33 @@
 <header class="l-header">
     <nav>
-        <div class="ui container">
+        <div class="ui grid container">
             <div class="ui circular labels">
-                <div class="ui top fixed menu">
-                    <a class="header item" href="{{ .Site.BaseURL }}">
-                        <i class="home icon"></i> {{ .Site.Title }}
+                <div id="nav-menu" class="ui top fixed menu">
+                    <a class="item" href="{{ .Site.BaseURL }}">
+                        <b><i class="home icon"></i>{{ .Site.Title }}</b>
                     </a>
                     <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="archive icon"></i> 文章 <span class="ui label">{{ len .Site.Sections.articles }}</span>
+                        <i class="archive icon"></i>文章<span class="ui label">{{ len .Site.Sections.articles }}</span>
                     </a>
                     <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span>
+                        <i class="block layout icon"></i>专题<span class="ui label">{{ len .Site.Taxonomies.series }}</span>
                     </a>
                     <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span>
+                        <i class="github alternate icon"></i>项目<span class="ui label">{{ len .Site.Taxonomies.projects }}</span>
                     </a>
-                    <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="grid layout icon"></i> 关于
+                    <a class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                        <i class="grid layout icon"></i><span class="text">关于</span>
+                        <div class="menu">
+                            <div class="item">
+                                <span class="text">Categories</span>
+                                <div class="menu">
+                                    <div class="item">Unread</div>
+                                    <div class="item">Promotions</div>
+                                    <div class="item">Updates</div>
+                                </div>
+                            </div>
+                            <div class="item">Archive</div>
+                        </div>
                     </a>
                     <div class="right item">
                         <form role="search">
