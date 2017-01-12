@@ -3,12 +3,12 @@
     <div class="col-md-8">
 
         {{ if not .IsHome }}
-        <header class="page-header">
+        <header>
             <h1>{{ .Title }}</h1>
         </header>
         {{ end }}
 
-        <ul class="p-articles">
+        <ul>
             {{ range (.Paginate .Data.Pages).Pages }}
             <li>{{ .Render "li" }}</li>
             {{ end }}

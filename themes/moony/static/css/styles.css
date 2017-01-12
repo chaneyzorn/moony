@@ -1,8 +1,22 @@
 .ui.menu .item:before {
-    background: rgba(255, 255, 255, 0)
+    background: rgba(255, 255, 255, 0);
 }
 
 #nav-menu {
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.main.content {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 100px;
+}
+
+.ui.list>.item {
+    padding-top: 30px;
+}
+
+.ui.list>.item:first-child {
+    padding-top: 0;
 }

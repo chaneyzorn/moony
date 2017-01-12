@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {{ partial "meta.html" . }}
+    <meta name="keywords" content="编程,计算机科学,代码,开源,技术文章,技术笔记,IT,开发者,程序员,极客">
+    <meta name="description" content="纵深计算机技术，追逐优秀，随心而动，何夜无月，逝者如斯">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/solarized-light.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+    <title>{{ .Site.Title }} | 何夜无月，逝者如斯</title>
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+    <main class="main content">
+        <div class="ui grid container">
+            <div class="eleven wide column">
+                {{ range (.Paginate .Data.Pages).Pages }}
+                <div class="ui segment">
+                    <header>
+                        <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                        <ul class="p-facts">
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05JST " }}">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</time></li>
+                            {{ with .Section }}
+                            <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+                            <li>{{ .WordCount }} Words</li>
+                            {{ if .IsDraft }}
+                            <li style="color: #2196f3;">DRAFT</li>{{ end }}
+                        </ul>
+                    </header>
+                    <div class="summary">{{ .Summary }}</div>
+                </div>
+                {{ end }}
+                <div class="ui divider"></div>
+                {{ partial "pagination.html" . }}
+            </div>
+            <div class="five wide column">
+            </div>
+        </div>
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/semantic-ui/2.2.7/semantic.min.js"></script>
+    <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/jekyll-search.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: '{{ .Site.BaseURL }}/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+            noResultsText: 'No results found',
+            limit: 10,
+            fuzzy: false,
+            exclude: ['Welcome']
+        })
+    </script>
+    <script>
+        $('.ui.dropdown').dropdown({
+            on: 'hover'
+        });
+    </script>
+</body>
+
+</html>
