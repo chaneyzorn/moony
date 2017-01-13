@@ -1,4 +1,8 @@
-{{ define "title" }}{{ .Title }} - {{ end }} {{ define "meta" }} {{ partial "single_meta.html" . }} {{ partial "single_json_ld.html" . }} {{ end }} {{ define "main" }}
+{{ define "meta" }} {{ partial "single_meta.html" . }} {{ partial "single_json_ld.html" . }} {{ end }}
+<!---->
+{{ define "title" }}{{ .Title }} | {{ end }}
+<!---->
+{{ define "main" }}
 <div class="row">
     <div class="col-md-8">
         <nav class="p-crumb">

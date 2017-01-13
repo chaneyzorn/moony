@@ -13,10 +13,7 @@
     margin-top: 100px;
 }
 
-.ui.list>.item {
-    padding-top: 30px;
-}
-
-.ui.list>.item:first-child {
-    padding-top: 0;
+.ui.segments>.segment {
+    padding: 0;
+    border-top: 1px solid #e7eaf1;
 }

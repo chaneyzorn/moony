@@ -1,4 +1,6 @@
 <meta name="description" content="{{ replaceRE "\n" "" (.Description | default .Summary) }}">
+<meta name="keywords" content="{{ delimit .Params.tags "," }}">
+
 
 <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
 <meta property="og:type" content="article">
