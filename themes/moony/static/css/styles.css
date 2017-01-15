@@ -1,3 +1,7 @@
+body {
+    background: #f7f8fa;
+}
+
 .ui.menu .item:before {
     background: rgba(255, 255, 255, 0);
 }
@@ -13,7 +17,18 @@
     margin-top: 100px;
 }
 
+.ui.segments {
+    margin: 2em 0em 2em 0em;
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+}
+
 .ui.segments>.segment {
-    padding: 0;
     border-top: 1px solid #e7eaf1;
+}
+
+#article-info {
+    padding: 0.2em 1em 0.5em 1em;
+    background: #f7f8fa;
 }

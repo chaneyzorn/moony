@@ -3,21 +3,12 @@
 {{ define "title" }}{{ .Title }} | {{ end }}
 
 {{ define "main" }}
-<div class="ui segments">
-    <div class="ui segment">
-        <a href="{{ .Permalink }}">
-            <h2 class="ui header">{{ .Title }}</h2>
-        </a>
+<div class="ui grid container">
+    <div class="eleven wide column">
+        {{ partial "article-item.html" . }}
     </div>
-    <div class="ui segment">
-        <div class="ui breadcrumb">
-            <div class="section"><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05JST " }}">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</time></div>
-            {{ with .Section }}
-            <div class="section"><i class="fa fa-bookmark" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}{{ . | urlize }}/">{{ . }}</a></div>{{ end }}
-            <div class="section">{{ .WordCount }} Words</div>
-            <div class="section" style="color: #2196f3;">DRAFT</div>
-        </div>
+    <div id="toc" class="five wide column">
+        {{ .TableOfContents }}
     </div>
-    <div class="ui segment">{{ .Content }}</div>
 </div>
 {{ end }}

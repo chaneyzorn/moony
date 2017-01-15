@@ -1,33 +1,43 @@
 <header class="l-header">
     <nav>
-        <div class="ui grid container">
+        <div class="ui stackable grid container">
             <div class="ui circular labels">
-                <div id="nav-menu" class="ui top fixed menu">
+                <div id="nav-menu" class="ui top fixed stackable menu">
                     <a class="item" href="{{ .Site.BaseURL }}">
                         <b><i class="home icon"></i>{{ .Site.Title }}</b>
                     </a>
-                    <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="archive icon"></i>文章<span class="ui label">{{ len .Site.Sections.articles }}</span>
-                    </a>
-                    <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="block layout icon"></i>专题<span class="ui label">{{ len .Site.Taxonomies.series }}</span>
-                    </a>
-                    <a class="item" href="{{ .Site.BaseURL }}">
-                        <i class="github alternate icon"></i>项目<span class="ui label">{{ len .Site.Taxonomies.projects }}</span>
-                    </a>
-                    <a class="ui dropdown item" href="{{ .Site.BaseURL }}">
-                        <i class="grid layout icon"></i><span class="text">关于</span>
+                    <div class="ui dropdown item">
+                        <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len .Site.Sections.articles }}</span></a>
                         <div class="menu">
-                            <div class="item">
-                                <span class="text">Categories</span>
-                                <div class="menu">
-                                    <div class="item">Unread</div>
-                                    <div class="item">Promotions</div>
-                                    <div class="item">Updates</div>
-                                </div>
-                            </div>
-                            <div class="item">Archive</div>
+                            <div class="header"><i class="desktop icon"></i> 技术</div>
+                            <div class="divider"></div>
+                            <a class="item" href="/articles/java/">Java</a>
+                            <a class="disabled item">Go</a>
+                            <a class="disabled item">Python</a>
+                            <a class="disabled item">Javascript</a>
+                            <a class="disabled item">Rust</a>
+                            <a class="disabled item">C/C++</a>
+                            <div class="header"><i class="write icon"></i> 随笔</div>
+                            <div class="divider"></div>
+                            <a class="disabled item">逐月</a>
+                            <a class="disabled item">流光</a>
+                            <a class="disabled item">无想</a>
                         </div>
+                    </div>
+                    <div class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                        <a href="/series/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
+                        <div class="menu">
+                            <div class="disabled item">暂无</div>
+                        </div>
+                    </div>
+                    <div class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                        <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
+                        <div class="menu">
+                            <div class="disabled item">暂无</div>
+                        </div>
+                    </div>
+                    <a class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                        <i class="user icon"></i><span class="text">关于</span>
                     </a>
                     <div class="right item">
                         <form role="search">
