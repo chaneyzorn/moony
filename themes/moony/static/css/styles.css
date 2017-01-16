@@ -2,6 +2,14 @@ body {
     background: #f7f8fa;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
 .ui.menu .item:before {
     background: rgba(255, 255, 255, 0);
 }
@@ -9,12 +17,8 @@ body {
 #nav-menu {
     padding-left: 10%;
     padding-right: 10%;
-}
-
-.main.content {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-top: 100px;
+    border: 1px solid #e7eaf1;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
 
 .ui.segments {
@@ -25,10 +29,32 @@ body {
 }
 
 .ui.segments>.segment {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     border-top: 1px solid #e7eaf1;
 }
 
+#article-header a {
+    display: flex;
+}
+
+#article-header.ui.segment {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+}
+
 #article-info {
-    padding: 0.2em 1em 0.5em 1em;
+    padding: 0.2em 1.5em 0.5em 1.5em;
     background: #f7f8fa;
+}
+
+#article-content {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.main.content {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 100px;
 }
