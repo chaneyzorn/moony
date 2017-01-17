@@ -10,7 +10,7 @@
             <div class="section"><i class="calendar icon"></i> {{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</div>
             {{ with .Params.tags }}
             <div id="article-tags" class="section">
-                {{ range . }}<a href="{{ $.Site.BaseURL }}{{ . | urlize }}/"><i class="tag icon"></i>{{ . }}</a> {{ end }}
+                {{ range . }}<a id="article-tag" href="{{ $.Site.BaseURL }}{{ . | urlize }}/"><i class="tag icon"></i>{{ . }}</a> {{ end }}
             </div>
             {{ end }}
         </div>

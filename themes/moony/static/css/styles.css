@@ -1,3 +1,5 @@
+/*全局*/
+
 body {
     background: #f7f8fa;
 }
@@ -10,9 +12,14 @@ h5 {
     margin: 0;
 }
 
-.ui.menu .item:before {
-    background: rgba(255, 255, 255, 0);
+.main.content {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 100px;
 }
+
+
+/*导航栏*/
 
 #nav-menu {
     padding-left: 10%;
@@ -20,6 +27,46 @@ h5 {
     border: 1px solid #e7eaf1;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
+
+.ui.menu {
+    font-size: 1.1rem;
+}
+
+.ui.menu .item {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+.ui.menu .item:before {
+    background: rgba(255, 255, 255, 0);
+}
+
+.ui.dropdown .menu>.header {
+    font-size: 1em;
+}
+
+.ui.menu .dropdown.item .menu {
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+}
+
+#search-input {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    background: #f7f8fa;
+    border: none;
+    transition: background 0.5s;
+}
+
+#search-input:focus {
+    background: #ffeff5;
+}
+
+.ui.icon.input>i.circular.icon {
+    top: 0.25em;
+}
+
+
+/*文章条目*/
 
 .ui.segments {
     margin: 2em 0em 2em 0em;
@@ -34,13 +81,23 @@ h5 {
     border-top: 1px solid #e7eaf1;
 }
 
-#article-header a {
-    display: flex;
+.ui.breadcrumb>.section {
+    padding-right: 0.6em;
 }
 
-#article-header.ui.segment {
+#article-header {
     padding-top: 0.6em;
     padding-bottom: 0.6em;
+    transition: 0.2s;
+}
+
+#article-header:hover {
+    background: #e9f0f4;
+    box-shadow: 0 5px 10px rgba(0, 37, 55, .05);
+}
+
+#article-header a {
+    display: flex;
 }
 
 #article-info {
@@ -48,13 +105,16 @@ h5 {
     background: #f7f8fa;
 }
 
+#article-tags {
+    padding-left: 0.6em;
+    border-left: 1px solid #d3d9e6;
+}
+
+#article-tag {
+    padding-right: 0.5em;
+}
+
 #article-content {
     font-size: 16px;
     line-height: 26px;
-}
-
-.main.content {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-top: 100px;
 }
