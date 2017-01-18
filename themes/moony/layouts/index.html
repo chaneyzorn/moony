@@ -22,6 +22,21 @@
                 {{ end }}
                 <div class="ui divider"></div>
                 {{ partial "pagination.html" . }}
+                <div class="ui divider"></div>
+                {{ if .Site.Params.debug }}
+                <debug>
+                    <div class="ui warning message">
+                        <div class="header">.Data</div>
+                        {{ printf "%#v" .Data }}
+                    </div>
+                    <div class="ui warning message">
+                        <div class="header">.Paginator</div>
+                        {{ printf "%#v" .Paginator }}
+                        <div class="header">.Paginator.Pages</div>
+                        {{ printf "%#v" .Paginator.Pages }}
+                    </div>
+                </debug>
+                {{ end }}
             </div>
             <div class="five wide column">
                 {{ partial "sidebar.html" . }}
