@@ -117,4 +117,24 @@ h5 {
 #article-content {
     font-size: 16px;
     line-height: 26px;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+
+/*页脚*/
+
+#footer-info {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 1em 1em;
+}
+
+#footer-nav {
+    margin-bottom: 1em;
+    display: block;
+}
+
+#footer-copyright {
+    display: block;
 }

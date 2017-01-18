@@ -1,7 +1,7 @@
 <footer>
     <div class="ui divider"></div>
-    <div>
-        <div class="ui breadcrumb circular labels">
+    <div id="footer-info">
+        <div id="footer-nav" class="ui breadcrumb circular labels">
             <a class="section" href="{{ .Site.BaseURL }}">主页</a>
             <div class="divider"> | </div>
             <a class="section" href="{{ .Site.BaseURL }}/archives/">文章<span class="ui label">{{ len .Site.Sections.articles }}</span></a>
@@ -12,8 +12,8 @@
             <div class="divider"> | </div>
             <a class="section" href="{{ .Site.BaseURL }}">关于</a>
         </div>
-        <div class="ui breadcrumb">
-            <span>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span class="h-logo">&copy; {{ .Site.Title }}</span>{{ end }}</span>
+        <div id="footer-copyright" class="ui breadcrumb">
+            <span>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span>&copy; 2017 {{ .Site.Title }}</span>{{ end }}</span>
             <div class="divider"> | </div>
             <span>Powered by <a href="https://gohugo.io/">Hugo</a></span>
         </div>

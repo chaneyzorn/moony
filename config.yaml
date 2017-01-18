@@ -6,6 +6,8 @@ languageCode: "zh-cn"
 defaultContentLanguage: "zh-cn"
 hasCJKLanguage: true
 
+Paginate: 5
+
 metaDataFormat: "yaml"
 theme: "moony"
 
