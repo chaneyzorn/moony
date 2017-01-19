@@ -122,6 +122,13 @@ h5 {
 }
 
 
+/*分页器*/
+
+#nav-pagination {
+    text-align: center;
+}
+
+
 /*页脚*/
 
 #footer-info {

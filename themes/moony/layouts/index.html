@@ -15,15 +15,12 @@
     <main class="main content">
         <div class="ui stackable grid container">
             <div class="eleven wide column">
-                {{ range (.Paginate .Data.Pages).Pages }}
+                {{ range .Paginator.Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
                 <!---->
-                {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }}
-                <!---->
-                {{ end }}
-                <div class="ui divider"></div>
                 {{ partial "pagination.html" . }}
-                <div class="ui divider"></div>
+                <!---->
                 {{ if .Site.Params.debug }}
+                <div class="ui divider"></div>
                 <debug>
                     <div class="ui warning message">
                         <div class="header">.Data</div>
@@ -32,8 +29,16 @@
                     <div class="ui warning message">
                         <div class="header">.Paginator</div>
                         {{ printf "%#v" .Paginator }}
+                        <div class="header">.Paginator.TotalPages</div>
+                        {{ printf "%#v" .Paginator.TotalPages }}
                         <div class="header">.Paginator.Pages</div>
                         {{ printf "%#v" .Paginator.Pages }}
+                        <div class="header">.Paginator.Pagers</div>
+                        {{ printf "%#v" .Paginator.Pagers }}
+                    </div>
+                    <div class="ui warning message">
+                        <div class="header">.Site.Taxonomies.tags</div>
+                        {{ printf "%#v" .Site.Taxonomies.tags }}
                     </div>
                 </debug>
                 {{ end }}
