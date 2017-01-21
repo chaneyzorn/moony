@@ -1,54 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+{{ define "meta" }}
+<meta name="keywords" content="编程,计算机科学,代码,开源,技术文章,技术笔记,IT,开发者,程序员,极客">
+<meta name="description" content="何夜无月，逝者如斯">
+{{ end }}
 
-<head>
-    {{ partial "meta.html" . }}
-    <meta name="keywords" content="编程,计算机科学,代码,开源,技术文章,技术笔记,IT,开发者,程序员,极客">
-    <meta name="description" content="何夜无月，逝者如斯">
-    <!---->
-    {{ partial "css.html" . }}
+{{ define "title" }}
     <title>{{ .Site.Title }} | 何夜无月，逝者如斯</title>
-</head>
+{{ end }}
 
-<body>
-    {{ partial "header.html" . }}
-    <main class="main content">
-        <div class="ui stackable grid container">
-            <div class="eleven wide column">
-                {{ range (.Paginate (where .Data.Pages "Section" "articles")).Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
-                <!---->
-                {{ partial "pagination.html" . }}
-                <!---->
-                {{ if .Site.Params.debug }}
-                <div class="ui divider"></div>
-                <debug>
-                    <div class="ui warning message">
-                        <div class="header">.Data</div>
-                        {{ printf "%#v" .Data }}
-                    </div>
-                    <div class="ui warning message">
-                        <div class="header">.Paginator</div>
-                        {{ printf "%#v" .Paginator }}
-                        <div class="header">.Paginator.TotalPages</div>
-                        {{ printf "%#v" .Paginator.TotalPages }}
-                        <div class="header">.Paginator.Pages</div>
-                        {{ printf "%#v" .Paginator.Pages }}
-                        <div class="header">.Paginator.Pagers</div>
-                        {{ printf "%#v" .Paginator.Pagers }}
-                    </div>
-                    <div class="ui warning message">
-                        <div class="header">.Site.Taxonomies.tags</div>
-                        {{ printf "%#v" .Site.Taxonomies.tags }}
-                    </div>
-                </debug>
-                {{ end }}
+{{ define "main" }}
+<div class="ui stackable grid container">
+    <div class="eleven wide column">
+        {{ range (.Paginate (where .Data.Pages "Section" "articles")).Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
+        <!---->
+        {{ partial "pagination.html" . }}
+        <!---->
+        {{ if .Site.Params.debug }}
+        <div class="ui divider"></div>
+        <debug>
+            <div class="ui warning message">
+                <div class="header">.Data</div>
+                {{ printf "%#v" .Data }}
             </div>
-            <div class="five wide column">
-                {{ partial "sidebar.html" . }}
+            <div class="ui warning message">
+                <div class="header">.Paginator</div>
+                {{ printf "%#v" .Paginator }}
+                <div class="header">.Paginator.TotalPages</div>
+                {{ printf "%#v" .Paginator.TotalPages }}
+                <div class="header">.Paginator.Pages</div>
+                {{ printf "%#v" .Paginator.Pages }}
+                <div class="header">.Paginator.Pagers</div>
+                {{ printf "%#v" .Paginator.Pagers }}
             </div>
-        </div>
-    </main>
-    {{ partial "footer.html" . }} {{ partial "script.html" . }}
-</body>
-
-</html>
+            <div class="ui warning message">
+                <div class="header">.Site.Taxonomies.tags</div>
+                {{ printf "%#v" .Site.Taxonomies.tags }}
+            </div>
+        </debug>
+        {{ end }}
+    </div>
+    <div class="five wide column">
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

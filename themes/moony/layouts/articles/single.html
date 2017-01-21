@@ -1,6 +1,6 @@
 {{ define "meta" }}{{ partial "single_meta.html" . }}{{ end }}
 
-{{ define "title" }}{{ .Title }} | {{ end }}
+{{ define "title" }}<title>{{ .Title }} | {{ .Site.Title }}</title>{{ end }}
 
 {{ define "main" }}
 <div class="ui grid container">

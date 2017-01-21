@@ -7,15 +7,14 @@
     {{ block "meta" . }}{{ end }}
     <!---->
     {{ partial "css.html" . }}
-    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
+    <!---->
+    {{ block "title" . }}{{ end }}
 </head>
 
 <body>
     {{ partial "header.html" . }}
-    <main>
-        <div class="main content">
-            {{ block "main" . }}{{ end }}
-        </div>
+    <main class="main content">
+        {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }} {{ partial "script.html" . }}
 </body>
