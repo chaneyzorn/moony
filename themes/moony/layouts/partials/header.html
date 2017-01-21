@@ -12,11 +12,12 @@
                             <div class="header"><i class="desktop icon"></i> 技术</div>
                             <div class="divider"></div>
                             <a class="item" href="/articles/java/">Java</a>
-                            <a class="disabled item">Go</a>
-                            <a class="disabled item">Python</a>
-                            <a class="disabled item">Javascript</a>
-                            <a class="disabled item">Rust</a>
-                            <a class="disabled item">C/C++</a>
+                            <!--<a class="disabled item">Go</a>-->
+                            <!--<a class="disabled item">Python</a>-->
+                            <!--<a class="disabled item">Javascript</a>-->
+                            <!--<a class="disabled item">Rust</a>-->
+                            <!--<a class="disabled item">C/C++</a>-->
+                            <a class="disabled item">GNU/Linux</a>
                             <div class="header"><i class="write icon"></i> 随笔</div>
                             <div class="divider"></div>
                             <a class="disabled item">逐月</a>
@@ -24,19 +25,19 @@
                             <a class="disabled item">无想</a>
                         </div>
                     </div>
-                    <div class="ui dropdown item" href="{{ .Site.BaseURL }}">
-                        <a href="/series/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
+                    <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                        <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
                         <div class="menu">
                             <div class="disabled item">暂无</div>
                         </div>
                     </div>
-                    <div class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                    <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
                         <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
                         <div class="menu">
                             <div class="disabled item">暂无</div>
                         </div>
                     </div>
-                    <a class="ui dropdown item" href="{{ .Site.BaseURL }}">
+                    <a class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
                         <i class="user icon"></i><span class="text">关于</span>
                     </a>
                     <div class="right item">

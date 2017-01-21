@@ -15,7 +15,7 @@
     <main class="main content">
         <div class="ui stackable grid container">
             <div class="eleven wide column">
-                {{ range .Paginator.Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
+                {{ range (.Paginate (where .Data.Pages "Section" "articles")).Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
                 <!---->
                 {{ partial "pagination.html" . }}
                 <!---->
