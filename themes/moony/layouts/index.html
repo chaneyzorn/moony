@@ -10,33 +10,11 @@
 {{ define "main" }}
 <div class="ui stackable grid container">
     <div class="eleven wide column">
-        {{ range (.Paginate (where .Data.Pages "Section" "articles")).Pages }} {{ .Scratch.Add "iSummary" true }} {{ partial "article-item.html" . }} {{ end }}
+        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "homepage-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->
-        {{ if .Site.Params.debug }}
-        <div class="ui divider"></div>
-        <debug>
-            <div class="ui warning message">
-                <div class="header">.Data</div>
-                {{ printf "%#v" .Data }}
-            </div>
-            <div class="ui warning message">
-                <div class="header">.Paginator</div>
-                {{ printf "%#v" .Paginator }}
-                <div class="header">.Paginator.TotalPages</div>
-                {{ printf "%#v" .Paginator.TotalPages }}
-                <div class="header">.Paginator.Pages</div>
-                {{ printf "%#v" .Paginator.Pages }}
-                <div class="header">.Paginator.Pagers</div>
-                {{ printf "%#v" .Paginator.Pagers }}
-            </div>
-            <div class="ui warning message">
-                <div class="header">.Site.Taxonomies.tags</div>
-                {{ printf "%#v" .Site.Taxonomies.tags }}
-            </div>
-        </debug>
-        {{ end }}
+        {{ partial "debug.html" . }}
     </div>
     <div class="five wide column">
         {{ partial "sidebar.html" . }}

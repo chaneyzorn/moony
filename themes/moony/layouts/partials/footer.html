@@ -4,7 +4,7 @@
         <div id="footer-nav" class="ui breadcrumb circular labels">
             <a class="section" href="{{ .Site.BaseURL }}">主页</a>
             <div class="divider"> | </div>
-            <a class="section" href="{{ .Site.BaseURL }}/archives/">文章<span class="ui label">{{ len .Site.Sections.articles }}</span></a>
+            <a class="section" href="{{ .Site.BaseURL }}/archives/">文章<span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
             <div class="divider"> | </div>
             <a class="section" href="{{ .Site.BaseURL }}">专题<span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
             <div class="divider"> | </div>

@@ -1,0 +1,32 @@
+{{ if $.Site.Params.debug }}
+<div class="ui divider"></div>
+<debug>
+    <div class="ui warning message">
+        <div class="header">.Data</div>
+        {{ printf "%#v" .Data }}
+    </div>
+    <div class="ui warning message">
+        {{ with $.Paginator }}
+        <div class="header">.Paginator</div>
+        {{ printf "%#v" . }}
+        <div class="header">.Paginator.TotalPages</div>
+        {{ printf "%#v" .TotalPages }}
+        <div class="header">.Paginator.TotalNumberOfElements</div>
+        {{ printf "%#v" .TotalNumberOfElements }}
+        <div class="header">.Paginator.Pages</div>
+        {{ printf "%#v" .Pages }}
+        <div class="header">.Paginator.Pagers</div>
+        {{ printf "%#v" .Pagers }}
+        <!---->
+        {{ end }}
+        <div class="header">test</div>
+    </div>
+    <div class="ui warning message">
+        {{ with $.Site.Taxonomies.tags }}
+        <div class="header">$.Site.Taxonomies.tags</div>
+        {{ printf "%#v" . }}
+        <!---->
+        {{ end }}
+    </div>
+</debug>
+{{ end }}

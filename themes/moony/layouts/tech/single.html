@@ -5,7 +5,7 @@
 {{ define "main" }}
 <div class="ui grid container">
     <div class="eleven wide column">
-        {{ partial "article-item.html" . }}
+        {{ .Render "content" }}
     </div>
     <div id="toc" class="five wide column">
         {{ .TableOfContents }}

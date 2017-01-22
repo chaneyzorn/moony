@@ -1,0 +1,19 @@
+<div class="ui segments">
+    <div id="article-header" class="ui segment">
+        <a href="{{ .Permalink }}">
+            <h1 style="flex-grow: 1;">{{ .Title }}</h1>
+            <span style="padding-top: 0.5em">{{ .WordCount }} Words</span>
+        </a>
+    </div>
+    <div id="article-info" class="ui segment">
+        <div class="ui breadcrumb">
+            <div class="section"><i class="calendar icon"></i> {{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</div>
+            {{ with .Params.tags }}
+            <div id="article-tags" class="section">
+                {{ range . }}<a id="article-tag" href="{{ $.Site.BaseURL }}{{ . | urlize }}/"><i class="tag icon"></i>{{ . }}</a> {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    <div id="article-content" class="ui segment">{{ .Summary }}</div>
+</div>

@@ -1,0 +1,16 @@
+{{ define "meta" }}{{ partial "single_meta.html" . }}{{ end }}
+
+{{ define "title" }}<title>{{ .Title }} | {{ .Site.Title }}</title>{{ end }}
+
+{{ define "main" }}
+<div class="ui grid container">
+    <div class="eleven wide column">
+        {{ .Render "content" }}
+        <!---->
+        {{ partial "debug.html" . }}
+    </div>
+    <div id="toc" class="five wide column">
+        {{ .TableOfContents }}
+    </div>
+</div>
+{{ end }}

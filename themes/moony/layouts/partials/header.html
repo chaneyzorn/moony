@@ -7,7 +7,7 @@
                         <b><i class="home icon"></i>{{ .Site.Title }}</b>
                     </a>
                     <div class="ui dropdown item">
-                        <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len .Site.Sections.articles }}</span></a>
+                        <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
                         <div class="menu">
                             <div class="header"><i class="desktop icon"></i> 技术</div>
                             <div class="divider"></div>
