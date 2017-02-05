@@ -1,12 +1,18 @@
 <div class="ui segments">
     <div class="ui segment">
-        test
+        <h3><i class="tags icon"></i> 标签云</h3>
     </div>
     <div class="ui segment">
-        test
-    </div>
-    <div class="ui segment">
-        test
+        <div class="ui horizontal list">
+            {{ range $key, $value := $.Site.Taxonomies.tags }}
+            <div class="item">
+                <div class="ui label">
+                    <a href="/tags/{{ $key | urlize }}/">{{ $key }}</a>
+                    <div class="detail">{{ len $value }}</div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
     </div>
 </div>
 <div class="ui segments">

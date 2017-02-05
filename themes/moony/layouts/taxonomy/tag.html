@@ -1,0 +1,19 @@
+{{ define "title" }}
+<title>标签：{{ .Title }} | {{ .Site.Title }}</title>
+{{ end }}
+
+{{ define "main" }}
+<h1><i class="tag icon"></i> {{ .Title }}</h1>
+<div class="ui stackable grid container">
+    <div class="eleven wide column">
+        {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
+        <!---->
+        {{ partial "pagination.html" . }}
+        <!---->
+        {{ partial "debug.html" . }}
+    </div>
+    <div class="five wide column">
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

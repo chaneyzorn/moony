@@ -1,0 +1,19 @@
+{{ define "title" }}
+<title>分类：技术 | {{ .Site.Title }}</title>
+{{ end }}
+
+{{ define "main" }}
+<h1><i class="desktop icon"></i> 技术</h1>
+<div class="ui stackable grid container">
+    <div class="eleven wide column">
+        {{ range (.Paginate .Site.Sections.tech).Pages }} {{ .Render "overview-item" }} {{ end }}
+        <!---->
+        {{ partial "pagination.html" . }}
+        <!---->
+        {{ partial "debug.html" . }}
+    </div>
+    <div class="five wide column">
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+{{ end }}

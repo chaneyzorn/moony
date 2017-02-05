@@ -2,11 +2,20 @@
 <div class="ui divider"></div>
 <debug>
     <div class="ui warning message">
-        <div class="header">.Data</div>
-        {{ printf "%#v" .Data }}
+        <div class="header">.</div>
+        {{ printf "%#v" . }}
     </div>
     <div class="ui warning message">
-        {{ with $.Paginator }}
+        <div class="header">.Kind</div>
+        {{ printf "%#v" .Kind }}
+        <div class="header">.Data</div>
+        {{ printf "%#v" .Data }}
+        <div class="header">.Site.Sections</div>
+        {{ printf "%#v" .Site.Sections }}
+    </div>
+    {{ if ne .Kind "page" }}
+    <div class="ui warning message">
+        {{ with .Paginator }}
         <div class="header">.Paginator</div>
         {{ printf "%#v" . }}
         <div class="header">.Paginator.TotalPages</div>
@@ -21,10 +30,13 @@
         {{ end }}
         <div class="header">test</div>
     </div>
+    {{ end }}
     <div class="ui warning message">
-        {{ with $.Site.Taxonomies.tags }}
-        <div class="header">$.Site.Taxonomies.tags</div>
+        {{ with $.Site.Taxonomies }}
+        <div class="header">$.Site.Taxonomies</div>
         {{ printf "%#v" . }}
+        <div class="header">$.Site.Taxonomies.tags</div>
+        {{ printf "%#v" .tags }}
         <!---->
         {{ end }}
     </div>

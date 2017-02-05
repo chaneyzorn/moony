@@ -1,58 +1,56 @@
-<header class="l-header">
-    <nav>
-        <div class="ui stackable grid container">
-            <div class="ui circular labels">
-                <div id="nav-menu" class="ui top fixed stackable menu">
-                    <a class="item" href="{{ .Site.BaseURL }}">
-                        <b><i class="home icon"></i>{{ .Site.Title }}</b>
-                    </a>
-                    <div class="ui dropdown item">
-                        <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
-                        <div class="menu">
-                            <div class="header"><i class="desktop icon"></i> 技术</div>
-                            <div class="divider"></div>
-                            <a class="item" href="/articles/java/">Java</a>
-                            <!--<a class="disabled item">Go</a>-->
-                            <!--<a class="disabled item">Python</a>-->
-                            <!--<a class="disabled item">Javascript</a>-->
-                            <!--<a class="disabled item">Rust</a>-->
-                            <!--<a class="disabled item">C/C++</a>-->
-                            <a class="disabled item">GNU/Linux</a>
-                            <div class="header"><i class="write icon"></i> 随笔</div>
-                            <div class="divider"></div>
-                            <a class="disabled item">逐月</a>
-                            <a class="disabled item">流光</a>
-                            <a class="disabled item">无想</a>
-                        </div>
+<header>
+    <div class="ui stackable grid container">
+        <div class="ui circular labels">
+            <div id="nav-menu" class="ui top fixed stackable menu">
+                <a class="item" href="{{ .Site.BaseURL }}">
+                    <b><i class="home icon"></i>{{ .Site.Title }}</b>
+                </a>
+                <div class="ui dropdown item">
+                    <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
+                    <div class="menu">
+                        <div class="header"><i class="desktop icon"></i> 技术</div>
+                        <div class="divider"></div>
+                        <a class="item" href="/articles/java/">Java</a>
+                        <!--<a class="disabled item">Go</a>-->
+                        <!--<a class="disabled item">Python</a>-->
+                        <!--<a class="disabled item">Javascript</a>-->
+                        <!--<a class="disabled item">Rust</a>-->
+                        <!--<a class="disabled item">C/C++</a>-->
+                        <a class="disabled item">GNU/Linux</a>
+                        <div class="header"><i class="write icon"></i> 随笔</div>
+                        <div class="divider"></div>
+                        <a class="disabled item">逐月</a>
+                        <a class="disabled item">流光</a>
+                        <a class="disabled item">无想</a>
                     </div>
-                    <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
-                        <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
-                        <div class="menu">
-                            <div class="disabled item">暂无</div>
-                        </div>
+                </div>
+                <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                    <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
+                    <div class="menu">
+                        <div class="disabled item">暂无</div>
                     </div>
-                    <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
-                        <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
-                        <div class="menu">
-                            <div class="disabled item">暂无</div>
-                        </div>
+                </div>
+                <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                    <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
+                    <div class="menu">
+                        <div class="disabled item">暂无</div>
                     </div>
-                    <a class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
-                        <i class="user icon"></i><span class="text">关于</span>
-                    </a>
-                    <div class="right item">
-                        <form role="search">
-                            <div id="search-container">
-                                <div class="ui icon input">
-                                    <input type="text" id="search-input" placeholder="Search...">
-                                    <i class="circular search link icon"></i>
-                                </div>
-                                <ul style="margin-top: 0px; margin-bottom: 0px;" id="results-container"></ul>
+                </div>
+                <a class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                    <i class="user icon"></i><span class="text">关于</span>
+                </a>
+                <div class="right item">
+                    <form role="search">
+                        <div id="search-container">
+                            <div class="ui icon input">
+                                <input type="text" id="search-input" placeholder="Search...">
+                                <i class="circular search link icon"></i>
                             </div>
-                        </form>
-                    </div>
+                            <ul style="margin-top: 0px; margin-bottom: 0px;" id="results-container"></ul>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </header>

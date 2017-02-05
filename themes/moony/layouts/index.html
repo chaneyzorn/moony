@@ -10,7 +10,7 @@
 {{ define "main" }}
 <div class="ui stackable grid container">
     <div class="eleven wide column">
-        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "homepage-item" }} {{ end }}
+        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->
