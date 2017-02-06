@@ -46,11 +46,10 @@
     <div class="ui segment">
         <h3><i class="users icon"></i> 友链</h3>
     </div>
+    {{ range .Site.Menus.links }}
     <div class="ui segment">
-        <a href="https://typeblog.net/"><i class="linkify icon"></i>Typeblog</a>
+        <a target="_blank" href="{{ .URL }}"><i class="linkify icon"></i>{{ .Name }}</a>
     </div>
-    <div class="ui segment">
-        <i class="linkify icon"></i>test
-    </div>
+    {{ end }}
 </div>
 {{ partial "footer.html" . }}

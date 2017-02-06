@@ -16,6 +16,17 @@ taxonomies:
   series: "series"
   project: "projects"
 
+menu:
+  links: #友链
+      - Name: "Typeblog"
+        URL: "https://typeblog.net/"
+      - Name: "Litten的博客"
+        URL: "http://litten.me/"
+      - Name: "约伊兹的萌狼乡手札"
+        URL: "https://blog.yoitsu.moe/"
+      - Name: "Farseerfc的小窩"
+        URL: "http://farseerfc.me/"
+
 params:
   dateformat: "2006-01-02 15:04" # Optional
   debug: true
