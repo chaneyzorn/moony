@@ -6,7 +6,7 @@
 <h1><i class="write icon"></i> 随笔</h1>
 <div class="ui stackable grid container">
     <div class="eleven wide column">
-        {{ range (.Paginate .Site.Sections.essay).Pages }} {{ .Render "overview-item" }} {{ end }}
+        {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->

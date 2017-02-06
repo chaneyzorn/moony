@@ -8,16 +8,16 @@
                 <div class="ui dropdown item">
                     <a href="/articles/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
                     <div class="menu">
-                        <div class="header"><i class="desktop icon"></i> 技术</div>
+                        <div class="header"><a href="/tech/"><i class="desktop icon"></i> 技术</a></div>
                         <div class="divider"></div>
-                        <a class="item" href="/articles/java/">Java</a>
+                        <a class="item" href="/tags/java/">Java</a>
                         <!--<a class="disabled item">Go</a>-->
                         <!--<a class="disabled item">Python</a>-->
                         <!--<a class="disabled item">Javascript</a>-->
                         <!--<a class="disabled item">Rust</a>-->
                         <!--<a class="disabled item">C/C++</a>-->
                         <a class="disabled item">GNU/Linux</a>
-                        <div class="header"><i class="write icon"></i> 随笔</div>
+                        <div class="header"><a href="/essay/"><i class="write icon"></i> 随笔</a></div>
                         <div class="divider"></div>
                         <a class="disabled item">逐月</a>
                         <a class="disabled item">流光</a>

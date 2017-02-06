@@ -1,19 +1,8 @@
 <footer>
     <div class="ui divider"></div>
     <div id="footer-info">
-        <div id="footer-nav" class="ui breadcrumb circular labels">
-            <a class="section" href="{{ .Site.BaseURL }}">主页</a>
-            <div class="divider"> | </div>
-            <a class="section" href="{{ .Site.BaseURL }}/archives/">文章<span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
-            <div class="divider"> | </div>
-            <a class="section" href="{{ .Site.BaseURL }}">专题<span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
-            <div class="divider"> | </div>
-            <a class="section" href="{{ .Site.BaseURL }}">项目<span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
-            <div class="divider"> | </div>
-            <a class="section" href="{{ .Site.BaseURL }}">关于</a>
-        </div>
         <div id="footer-copyright" class="ui breadcrumb">
-            <span>{{ with .Site.Copyright }}{{ . | safeHTML }}{{ else }}<span>&copy; 2017 {{ .Site.Title }}</span>{{ end }}</span>
+            <span><i class="copyright icon"></i>2017 <i class="heart icon"></i>{{ .Site.Title }}</span>
             <div class="divider"> | </div>
             <span>Powered by <a href="https://gohugo.io/">Hugo</a></span>
         </div>

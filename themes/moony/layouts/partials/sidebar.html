@@ -1,4 +1,31 @@
-<div class="ui segments">
+<div id="info-card" class="ui card">
+    <div class="image">
+        <img src="/img/moon.png">
+    </div>
+    <div class="content" style="text-align: center">
+        <div class="header">ChaneyZorn</div>
+        <div style="margin-top: .5em" class="meta">
+            <i class="marker icon"></i>Wuhan
+            <i></i>
+            <i></i>
+            <i class="divider"> | </i>
+            <i></i>
+            <i class="student icon"></i>HUST
+            <i></i>
+        </div>
+        <div class="description">
+            高山仰止 景行行止 虽不能至 心向往之
+        </div>
+    </div>
+    <div id="social-icons">
+        <a><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        <a><i class="fa fa-weibo" aria-hidden="true"></i></a>
+        <a><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div id="tags-clouds" class="ui segments">
     <div class="ui segment">
         <h3><i class="tags icon"></i> 标签云</h3>
     </div>
@@ -7,7 +34,7 @@
             {{ range $key, $value := $.Site.Taxonomies.tags }}
             <div class="item">
                 <div class="ui label">
-                    <a href="/tags/{{ $key | urlize }}/">{{ $key }}</a>
+                    <a href="/tags/{{ $key | urlize }}/"><i class="tag icon"></i>{{ $key }}</a>
                     <div class="detail">{{ len $value }}</div>
                 </div>
             </div>
@@ -17,23 +44,13 @@
 </div>
 <div class="ui segments">
     <div class="ui segment">
-        test
+        <h3><i class="users icon"></i> 友链</h3>
     </div>
     <div class="ui segment">
-        test
+        <a href="https://typeblog.net/"><i class="linkify icon"></i>Typeblog</a>
     </div>
     <div class="ui segment">
-        test
+        <i class="linkify icon"></i>test
     </div>
 </div>
-<div class="ui segments">
-    <div class="ui segment">
-        test
-    </div>
-    <div class="ui segment">
-        test
-    </div>
-    <div class="ui segment">
-        test
-    </div>
-</div>
+{{ partial "footer.html" . }}
