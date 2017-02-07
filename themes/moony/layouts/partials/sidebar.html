@@ -18,11 +18,7 @@
         </div>
     </div>
     <div id="social-icons">
-        <a><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a><i class="fa fa-telegram" aria-hidden="true"></i></a>
-        <a><i class="fa fa-weibo" aria-hidden="true"></i></a>
-        <a><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        {{ range .Site.Menus.social }}<a target="_blank" href="{{ .URL }}">{{ .Pre }}</a>{{ end }}
     </div>
 </div>
 <div id="tags-clouds" class="ui segments">
@@ -48,7 +44,7 @@
     </div>
     {{ range .Site.Menus.links }}
     <div class="ui segment">
-        <a target="_blank" href="{{ .URL }}"><i class="linkify icon"></i>{{ .Name }}</a>
+        <i class="linkify icon"></i><a class="underline" target="_blank" href="{{ .URL }}">{{ .Name }}</a>
     </div>
     {{ end }}
 </div>

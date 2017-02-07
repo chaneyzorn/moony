@@ -161,7 +161,14 @@ a {
 }
 
 #social-icons i {
-    margin: 0 0.2em;
+    margin: 0 4px;
+    color: #000000;
+}
+
+#social-icons svg {
+    vertical-align: top;
+    margin: 0 4px;
+    color: #000000;
 }
 
 
@@ -179,4 +186,25 @@ a {
 
 #tags-clouds .ui.label>.detail {
     margin-left: 0.2em;
+}
+
+
+/*装饰特效*/
+
+.underline {
+    display: inline-block;
+}
+
+.underline:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+    transform: scale(0);
+    transition: all 0.5s cubic-bezier(0, 0.6, 0.5, 1.35);
+}
+
+.underline:hover:after {
+    transform: scale(1);
 }
