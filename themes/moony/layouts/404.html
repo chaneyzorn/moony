@@ -1,8 +1,20 @@
-{{ define "title" }}_(:з」∠)_ | {{ end }}
-
-{{ define "main" }}
-<header class="page-header">
-    <h1> _(:з」∠)_ 找不到了啦~~~ </h1>
-</header>
-{{ partial "debug.html" . }}
+{{ define "title" }}
+<title>_(:з」∠)_ | 何夜无月，逝者如斯</title>
+{{ end }} {{ define "main" }}
+<div class="page404">
+    <div class="ui segments">
+        <div class="ui segment">
+            <h3>404 施工现场 _(:з」∠)_</h3>
+        </div>
+        <div class="ui segment">
+            <div id="todo" class="ui list">
+                {{ range .Site.Data.todolist }}
+                <div class="item">
+                    <i class="edit icon"></i> {{ . }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
 {{ end }}

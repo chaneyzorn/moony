@@ -1,10 +1,15 @@
 <footer>
     <div class="ui divider"></div>
-    <div id="footer-info">
+    <div id="footer-info" class="underline">
         <div id="footer-copyright" class="ui breadcrumb">
-            <span><i class="copyright icon"></i>2017 <i class="heart icon"></i>{{ .Site.Title }}</span>
+            <span><i class="copyright icon"></i>2017 <i class="heart icon"></i><a href="/">{{ .Site.Title }}</a></span>
             <div class="divider"> | </div>
-            <span>Powered by <a href="https://gohugo.io/">Hugo</a></span>
+            <span>Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a></span>
+            <div style="margin-top: 0.5em">
+                <span><a target="_blank" href="https://git.oschina.net/chaneyzorn/moony.me">Moony</a></span>
+                <div class="divider"> | </div>
+                <span>Designed by <a target="_blank" href="https://github.com/Campanula">ChaneyZorn</a></span>
+            </div>
         </div>
     </div>
 </footer>

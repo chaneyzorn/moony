@@ -25,26 +25,23 @@
     <div class="ui segment">
         <h3><i class="tags icon"></i> 标签云</h3>
     </div>
-    <div class="ui segment">
+    <div class="ui segment underline">
         <div class="ui horizontal list">
             {{ range $key, $value := $.Site.Taxonomies.tags }}
             <div class="item">
-                <div class="ui label">
-                    <a href="/tags/{{ $key | urlize }}/"><i class="tag icon"></i>{{ $key }}</a>
-                    <div class="detail">{{ len $value }}</div>
-                </div>
+                <i class="tag icon"></i><a href="/tags/{{ $key | urlize }}/">{{ $key }}<sup>{{ len $value }}</sup></a>
             </div>
             {{ end }}
         </div>
     </div>
 </div>
-<div class="ui segments">
+<div class="ui segments underline">
     <div class="ui segment">
         <h3><i class="users icon"></i> 友链</h3>
     </div>
     {{ range .Site.Menus.links }}
-    <div class="ui segment">
-        <i class="linkify icon"></i><a class="underline" target="_blank" href="{{ .URL }}">{{ .Name }}</a>
+    <div id="friend-link" class="ui segment">
+        <i class="linkify icon"></i><a target="_blank" href="{{ .URL }}">{{ .Name }}</a>
     </div>
     {{ end }}
 </div>
