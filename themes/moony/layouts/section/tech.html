@@ -5,15 +5,17 @@
 {{ define "main" }}
 <h1><i class="desktop icon"></i> 技术</h1>
 <div class="ui stackable grid container">
-    <div class="eleven wide column">
+    <div id="left-content" class="eleven wide column">
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div class="five wide column">
+    <div id="right-content" class="five wide column">
         {{ partial "sidebar.html" . }}
+        <!---->
+        {{ partial "footer.html" . }}
     </div>
 </div>
 {{ end }}

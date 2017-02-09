@@ -4,13 +4,15 @@
 
 {{ define "main" }}
 <div class="ui grid container">
-    <div class="eleven wide column">
+    <div id="left-content" class="eleven wide column">
         {{ .Render "content" }}
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div id="toc" class="five wide column">
+    <div id="right-content" class="five wide column">
+        {{ partial "sidebar.html" . }}
         {{ .TableOfContents }}
+        {{ partial "footer.html" . }}
     </div>
 </div>
 {{ end }}

@@ -9,15 +9,17 @@
 
 {{ define "main" }}
 <div class="ui stackable grid container">
-    <div class="eleven wide column">
+    <div id="left-content" class="eleven wide column">
         {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div class="five wide column">
+    <div id="right-content" class="five wide column">
         {{ partial "sidebar.html" . }}
+        <!---->
+        {{ partial "footer.html" . }}
     </div>
 </div>
 {{ end }}
