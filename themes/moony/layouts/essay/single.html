@@ -3,7 +3,7 @@
 {{ define "title" }}<title>{{ .Title }} | {{ .Site.Title }}</title>{{ end }}
 
 {{ define "main" }}
-<div class="ui grid container">
+<div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
         {{ .Render "content" }}
         <!---->

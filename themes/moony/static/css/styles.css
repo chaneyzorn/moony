@@ -21,6 +21,7 @@ a:hover {
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 100px;
+    margin-bottom: 1em;
 }
 
 
@@ -278,12 +279,20 @@ a:hover {
 
 .page404 {
     text-align: center;
-    padding: 5em 0 0 0;
+    padding: 2em 0 0 0;
 }
 
 .page404 .ui.segments {
+    opacity: 0;
     display: inline-block;
     text-align: initial;
+    animation: arise 0.5s 0.1s forwards ease-in-out;
+}
+
+.page404 h3 {
+    text-align: center;
+    color: #e8e8e8;
+    font-size: 1.8rem;
 }
 
 #todo .item {
@@ -335,4 +344,63 @@ a:hover {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+@keyframes arise {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*Markdown样式*/
+
+.code-block {
+    display: flex;
+}
+
+.code-block pre {
+    display: inline-block;
+}
+
+.code-block pre:nth-child(1) code {
+    color: #adadad;
+    text-align: right;
+    user-select: none;
+    background-color: #e8e8e8;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.code-block pre:nth-child(2) {
+    flex-grow: 1;
+}
+
+.code-block pre:nth-child(2) code {
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    background-color: #f9f9f9;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px dashed #cfcfcf;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding: 1em;
+    color: #6c768c;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+    border-left-width: 0.8em;
+    border-left-style: solid;
+    border-left-color: #e8e8e8;
 }

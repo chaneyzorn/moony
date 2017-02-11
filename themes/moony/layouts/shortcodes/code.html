@@ -1,0 +1,3 @@
+<div class="code-block">
+    <pre><code>{{ range (split (trim .Inner "\n") "\n" | len | seq) }}<span>{{ . }}</span><br>{{ end }}</code></pre>{{ printf "%s%s%s%s" "```" (.Get 0) .Inner "```" | markdownify }}
+</div>
