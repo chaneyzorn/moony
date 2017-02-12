@@ -15,6 +15,9 @@
     {{ partial "header.html" . }}
     <main class="main content">
         {{ block "main" . }}{{ end }}
+        <div>
+            <button class="back-top" tabindex="0"><i class="fa fa-arrow-up"></i></button>
+        </div>
     </main>
     {{ partial "script.html" . }}
 </body>

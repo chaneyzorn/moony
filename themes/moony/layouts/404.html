@@ -10,7 +10,7 @@
             <div id="todo" class="ui list">
                 {{ range .Site.Data.todolist }}
                 <div class="item">
-                    <i class="edit icon"></i> {{ . }}
+                    <i class="edit icon"></i> {{ . | markdownify }}
                 </div>
                 {{ end }}
             </div>

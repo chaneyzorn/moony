@@ -78,42 +78,42 @@ a:hover {
 
 #left-content .ui.segments:nth-child(1) {
     opacity: 0;
-    animation: loadin 0.5s 0.3s forwards ease-in-out;
+    animation: loadin 0.5s 0.1s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(2) {
     opacity: 0;
-    animation: loadin 0.5s 0.35s forwards ease-in-out;
+    animation: loadin 0.5s 0.15s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(3) {
     opacity: 0;
-    animation: loadin 0.5s 0.4s forwards ease-in-out;
+    animation: loadin 0.5s 0.2s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(4) {
     opacity: 0;
-    animation: loadin 0.5s 0.45s forwards ease-in-out;
+    animation: loadin 0.5s 0.25s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(5) {
     opacity: 0;
-    animation: loadin 0.5s 0.5s forwards ease-in-out;
+    animation: loadin 0.5s 0.3s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(6) {
     opacity: 0;
-    animation: loadin 0.5s 0.55s forwards ease-in-out;
+    animation: loadin 0.5s 0.35s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(7) {
     opacity: 0;
-    animation: loadin 0.5s 0.6s forwards ease-in-out;
+    animation: loadin 0.5s 0.4s forwards ease-in-out;
 }
 
 #left-content .ui.segments:nth-child(8) {
     opacity: 0;
-    animation: loadin 0.5s 0.65s forwards ease-in-out;
+    animation: loadin 0.5s 0.45s forwards ease-in-out;
 }
 
 #right-content {
@@ -275,11 +275,46 @@ a:hover {
 }
 
 
+/*返回顶部*/
+
+.back-top {
+    position: fixed;
+    right: 2em;
+    bottom: -100%;
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    color: #8d9eb3;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: inline-block;
+    outline: none;
+    text-align: center;
+    border-width: 0;
+    border-radius: 50%;
+    background-color: #e7eaf1;
+    transition: background-color 0.1s ease-in-out;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.back-top:hover {
+    background-color: #d5dbe7;
+}
+
+.back-top:active {
+    background-color: #aad3d3;
+}
+
+.show-on {
+    bottom: 2em;
+}
+
+
 /*404页面*/
 
 .page404 {
     text-align: center;
-    padding: 2em 0 0 0;
+    padding: 1em 0 0 0;
 }
 
 .page404 .ui.segments {
@@ -300,24 +335,31 @@ a:hover {
     color: #767676;
 }
 
+#todo>.item>i.icon {
+    display: initial;
+}
+
 
 /*装饰特效*/
 
-.underline a {
+.underline a,
+#article-content a {
     display: inline-block;
 }
 
-.underline a:after {
+.underline a:after,
+#article-content a:after {
     content: "";
     display: block;
     height: 1px;
     width: 100%;
-    background-color: #000000;
+    background-color: #6c768c;
     transform: scale(0);
     transition: all 0.5s cubic-bezier(0, 0.6, 0.5, 1.35);
 }
 
-.underline a:hover:after {
+.underline a:hover:after,
+#article-content a:hover:after {
     transform: scale(1);
 }
 
@@ -360,6 +402,13 @@ a:hover {
 
 /*Markdown样式*/
 
+
+/*代码*/
+
+.hljs {
+    background-color: #ffeff5;
+}
+
 .code-block {
     display: flex;
 }
@@ -389,18 +438,37 @@ a:hover {
     border-bottom-right-radius: 2px;
 }
 
+
+/*分割线*/
+
 hr {
     border: 0;
     border-bottom: 1px dashed #cfcfcf;
 }
 
+
+/*引用*/
+
 blockquote {
     margin: 1em 0;
-    padding: 1em;
+    padding: 0.8em;
     color: #6c768c;
     background-color: #f9f9f9;
     border-radius: 2px;
     border-left-width: 0.8em;
     border-left-style: solid;
     border-left-color: #e8e8e8;
+}
+
+
+/*链接*/
+
+#article-content a {
+    color: #6c768c;
+    border-bottom: 1px dashed #cfcfcf;
+}
+
+#article-content a:hover {
+    border-bottom: 0;
+    transition: all 0.5s ease-in-out;
 }
