@@ -292,6 +292,7 @@ a:hover {
     text-align: center;
     border-width: 0;
     border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
     background-color: #e7eaf1;
     transition: background-color 0.1s ease-in-out;
     transition: bottom 0.5s ease-in-out;
@@ -343,11 +344,13 @@ a:hover {
 /*装饰特效*/
 
 .underline a,
+#TableOfContents a,
 #article-content a {
     display: inline-block;
 }
 
 .underline a:after,
+#TableOfContents a:after,
 #article-content a:after {
     content: "";
     display: block;
@@ -359,6 +362,7 @@ a:hover {
 }
 
 .underline a:hover:after,
+#TableOfContents a:hover:after,
 #article-content a:hover:after {
     transform: scale(1);
 }
@@ -469,6 +473,22 @@ blockquote {
 }
 
 #article-content a:hover {
-    border-bottom: 0;
+    border-bottom-color: rgba(255, 255, 255, 0);
     transition: all 0.5s ease-in-out;
+}
+
+
+/*MathJax 公式*/
+
+.mathjax {
+    color: black;
+    margin: 1.5em 0;
+}
+
+code.mathjax {
+    color: black;
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
 }

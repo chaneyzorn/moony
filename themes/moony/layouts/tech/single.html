@@ -8,7 +8,9 @@
         {{ .Render "content" }}
     </div>
     <div id="right-content" class="five wide column">
+        {{ partial "sidebar.html" . }}
         {{ .TableOfContents }}
+        {{ partial "footer.html" . }}
     </div>
 </div>
 {{ end }}

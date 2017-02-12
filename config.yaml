@@ -16,6 +16,11 @@ taxonomies:
   series: "series"
   project: "projects"
 
+blackfriday:
+  hrefTargetBlank: true
+  extensions:
+    - hardLineBreak
+
 menu:
   links: #友链
       - Name: "Typeblog"
