@@ -14,6 +14,14 @@ SimpleJekyllSearch({
 $('.ui.dropdown').dropdown({
     on: 'hover'
 });
+$('.lg-img').dimmer({
+    on: 'hover',
+    opacity: 0.2,
+    duration: {
+        show: 300,
+        hide: 300
+    },
+});
 
 $(window).on('scroll', function() {
     $('.back-top').toggleClass('show-on', window.pageYOffset > 50);
@@ -24,6 +32,12 @@ $('.back-top').on('click', function() {
         duration: 1000,
         easing: [25, 10]
     });
+});
+
+$('#article-content,#info-card').lightGallery({
+    selector: '.lg-img',
+    subHtmlSelectorRelative: true,
+    download: false
 });
 
 MathJax.Hub.Config({

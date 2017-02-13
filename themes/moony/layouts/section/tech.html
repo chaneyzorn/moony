@@ -3,9 +3,9 @@
 {{ end }}
 
 {{ define "main" }}
-<h1><i class="desktop icon"></i> 技术</h1>
 <div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
+        <h1><i class="desktop icon"></i> 技术</h1>
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
