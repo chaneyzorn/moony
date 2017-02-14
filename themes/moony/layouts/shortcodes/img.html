@@ -1,10 +1,8 @@
 <!--dimmer,float,src,title,caption,lightgallery-->
-<figure class="lg-img {{ if .Get "position" }}{{ .Get "position" }} floated{{ end }}" data-src="{{ .Get "src" }}"  data-sub-html=".caption">
+<figure class="lg-img {{ if .Get "position" }}{{ .Get "position" }} floated{{ end }}" data-src="{{ .Get "src" }}" {{ if not (.Get "download") }}data-download-url="false"{{ end }} data-sub-html=".caption">
     <img class="ui rounded image" src="{{ .Get "src" }}">
     <div style="display:none" class="caption">
-        {{ if .Get "title" }}
-        <h3>{{ .Get "title" }}{{else}}{{ .Get "src" }}</h3>
-        {{ end }}
+        <h4>{{ if .Get "title" }}{{ .Get "title" }}{{else}}{{ .Get "src" }}{{ end }}</h4>
         {{ if .Get "caption" }}
         <p>{{ .Get "caption" }}</p>
         {{ end }}

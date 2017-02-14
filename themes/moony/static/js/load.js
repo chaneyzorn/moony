@@ -37,7 +37,9 @@ $('.back-top').on('click', function() {
 $('#article-content,#info-card').lightGallery({
     selector: '.lg-img',
     subHtmlSelectorRelative: true,
-    download: false
+    pager: true,
+    thumbnail: false,
+    hideBarsDelay: 1500
 });
 
 MathJax.Hub.Config({

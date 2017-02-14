@@ -1,12 +1,12 @@
 {{ define "title" }}
-<title>标签：{{ .Title }} | {{ .Site.Title }}</title>
+<title>时间线 | {{ .Site.Title }}</title>
 {{ end }}
 
 {{ define "main" }}
 <div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
-        <h1><i class="tag icon"></i> {{ .Title }}</h1>
-        {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
+        <h1><i class="write icon"></i> 时间线</h1>
+        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" . }}
         <!---->

@@ -66,6 +66,9 @@ figure {
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
 
+
+/*搜索框*/
+
 #search-input {
     padding-top: 0.6em;
     padding-bottom: 0.6em;
@@ -85,42 +88,47 @@ figure {
 
 /*左右页面*/
 
-#left-content .ui.segments:nth-child(1) {
+#left-content>h1 {
+    opacity: 0;
+    animation: leftSliding 0.5s 0.3s forwards ease-in-out;
+}
+
+#left-content .ui.segments:nth-of-type(1) {
     opacity: 0;
     animation: loadin 0.5s 0.1s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(2) {
+#left-content .ui.segments:nth-of-type(2) {
     opacity: 0;
     animation: loadin 0.5s 0.15s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(3) {
+#left-content .ui.segments:nth-of-type(3) {
     opacity: 0;
     animation: loadin 0.5s 0.2s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(4) {
+#left-content .ui.segments:nth-of-type(4) {
     opacity: 0;
     animation: loadin 0.5s 0.25s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(5) {
+#left-content .ui.segments:nth-of-type(5) {
     opacity: 0;
     animation: loadin 0.5s 0.3s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(6) {
+#left-content .ui.segments:nth-of-type(6) {
     opacity: 0;
     animation: loadin 0.5s 0.35s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(7) {
+#left-content .ui.segments:nth-of-type(7) {
     opacity: 0;
     animation: loadin 0.5s 0.4s forwards ease-in-out;
 }
 
-#left-content .ui.segments:nth-child(8) {
+#left-content .ui.segments:nth-of-type(8) {
     opacity: 0;
     animation: loadin 0.5s 0.45s forwards ease-in-out;
 }
@@ -406,6 +414,17 @@ figure {
     }
 }
 
+@keyframes leftSliding {
+    0% {
+        opacity: 0;
+        transform: translateX(-4em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes rightSliding {
     0% {
         opacity: 0;
@@ -477,11 +496,11 @@ figure {
 /*行内代码*/
 
 code {
+    font-size: 0.9em;
     color: #6c768c;
-    background-color: #e8e8e8;
+    background-color: #e9f0f4;
     border-radius: 4px;
-    padding-left: 0.3em;
-    padding-right: 0.3em;
+    padding: 0.2em 0.3em;
     margin: 0 0.1em;
 }
 
@@ -575,4 +594,12 @@ body.lg-on {
 
 .lg-img:not(.floated) .ui.dimmer:hover .center {
     transform: scale(1);
+}
+
+.lg-sub-html {
+    padding: 5px 40px;
+}
+
+.lg-sub-html p {
+    margin: 0;
 }
