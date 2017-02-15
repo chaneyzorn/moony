@@ -1,30 +1,31 @@
-{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+<!-- partial 需要传入分页器， 下文中的顶级 . 代表分页器本身-->
+{{ if or (.HasPrev) (.HasNext) }}
 <div id="nav-pagination" class="ui divider"></div>
 <nav id="nav-pagination">
     <div class="ui buttons">
-        {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}" class="ui icon button"><i class="left chevron icon"></i></a>
+        {{ if .HasPrev }}
+        <a href="{{ .Prev.URL }}" class="ui icon button"><i class="left chevron icon"></i></a>
         {{ else }}
         <a class="ui icon disabled button"><i class="left chevron icon"></i></a>
         {{ end }}
-        {{ $curPgNum := .Paginator.PageNumber }}
+        {{ $curPgNum := .PageNumber }}
         <!--如果分页少于等于8，则全部展示-->
-        {{ if lt .Paginator.TotalPages 9 }}
-            {{ range .Paginator.Pagers }}
+        {{ if lt .TotalPages 9 }}
+            {{ range .Pagers }}
             <a href="{{ .URL }}" class="ui icon button {{ if eq .PageNumber $curPgNum }}active{{ end }}"> {{ .PageNumber }} </a>
             {{ end }}
         {{ else }}
         <!--分页大于等于9页，展示首尾页和（-2当前页+2），其他省略-->
             {{ if lt $curPgNum 5 }}
-                {{ range first (add $curPgNum 2) .Paginator.Pagers }}
+                {{ range first (add $curPgNum 2) .Pagers }}
                 <a href="{{ .URL }}" class="ui icon button {{ if eq .PageNumber $curPgNum }}active{{ end }}"> {{ .PageNumber }} </a>
                 {{ end }}
                 <a class="ui icon disabled button">...</a>
-                <a href="{{ .Site.BaseURL }}page/{{ .Paginator.TotalPages }}/" class="ui icon button"> {{ .Paginator.TotalPages }} </a>
-            {{ else if gt $curPgNum (sub .Paginator.TotalPages 4) }}
+                <a href="{{ .Site.BaseURL }}page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
+            {{ else if gt $curPgNum (sub .TotalPages 4) }}
                 <a href="{{ .Site.BaseURL }}" class="ui icon button"> 1 </a>
                 <a class="ui icon disabled button">...</a>
-                {{ range after (sub $curPgNum 3) .Paginator.Pagers }}
+                {{ range after (sub $curPgNum 3) .Pagers }}
                 <a href="{{ .URL }}" class="ui icon button {{ if eq .PageNumber $curPgNum }}active{{ end }}"> {{ .PageNumber }} </a>
                 {{ end }}
             {{ else }}
@@ -36,11 +37,11 @@
                 <a href="{{ .Site.BaseURL }}page/{{ add $curPgNum 1 }}/" class="ui icon button"> {{ add $curPgNum 1 }} </a>
                 <a href="{{ .Site.BaseURL }}page/{{ add $curPgNum 2 }}/" class="ui icon button"> {{ add $curPgNum 2 }} </a>
                 <a class="ui icon disabled button">...</a>
-                <a href="{{ .Site.BaseURL }}page/{{ .Paginator.TotalPages }}/" class="ui icon button"> {{ .Paginator.TotalPages }} </a>
+                <a href="{{ .Site.BaseURL }}page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
             {{ end }}
         {{ end }}
-        {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}" class="ui icon button"><i class="right chevron icon"></i></a> {{ else }}
+        {{ if .HasNext }}
+        <a href="{{ .Next.URL }}" class="ui icon button"><i class="right chevron icon"></i></a> {{ else }}
         <a class="ui icon disabled button"><i class="right chevron icon"></i></a> {{ end }}
     </div>
 </nav>

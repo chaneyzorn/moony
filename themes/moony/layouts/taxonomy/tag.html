@@ -8,7 +8,7 @@
         <h1><i class="tag icon"></i> {{ .Title }}</h1>
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
-        {{ partial "pagination.html" . }}
+        {{ partial "pagination.html" .Paginator }}
         <!---->
         {{ partial "debug.html" . }}
     </div>

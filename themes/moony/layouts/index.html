@@ -10,9 +10,10 @@
 {{ define "main" }}
 <div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
-        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "overview-item" }} {{ end }}
+        {{ $paginator := .Paginate (where $.Site.Pages "Type" "in" "tech essay") }}
+        {{ range $paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
-        {{ partial "pagination.html" . }}
+        {{ partial "pagination.html" $paginator }}
         <!---->
         {{ partial "debug.html" . }}
     </div>
