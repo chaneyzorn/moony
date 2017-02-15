@@ -3,14 +3,36 @@
 {{ end }}
 
 {{ define "main" }}
+<!--归档时间线页面需要分页器，而 Hugo 分页器只能使用在 homepage,sections,taxonomies 三类页面中-->
+<!--homepage只能存在一个，不能再拿来制作归档，taxonomies配置相对麻烦，sections相对简单灵活-->
+<!--archive section 下至少要有一篇 content 或者 _index 才能触发 Section Lists Template-->
 <div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
-        <h1><i class="write icon"></i> 时间线</h1>
-        {{ range (.Paginate (where $.Site.Pages "Type" "in" "tech essay")).Pages }} {{ .Render "overview-item" }} {{ end }}
-        <!---->
-        {{ partial "pagination.html" . }}
-        <!---->
-        {{ partial "debug.html" . }}
+        <div id="archive-timeline" class="ui segment">
+            <h1><i class="calendar icon"></i> 时间线</h1>
+            <div class="timeline">
+            {{ $paginator := .Paginate ($.Site.Pages.GroupByDate "2006") }}
+            {{ range $paginator.PageGroups }}
+            <h2>{{ .Key }}</h2>
+            {{ range .Pages }}
+            <h3>{{ .Title }}</h3>
+            <h4>{{ .Kind }}</h4>
+            <a href="{{ .Permalink }}">{{ .Permalink }}</a>
+            <div class="ui divider"></div>
+            {{ end }}
+            {{ end }}
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui warning message">
+            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006")</div>
+            {{ printf "%#v" $paginator }}
+            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006").PageGroups</div>
+            {{ printf "%#v" $paginator.PageGroups }}
+            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006").Pages</div>
+            {{ printf "%#v" $paginator.Pages }}
+        </div>
+        {{ partial "pagination.html" $paginator }}
     </div>
     <div id="right-content" class="five wide column">
         {{ partial "sidebar.html" . }}
