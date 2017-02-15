@@ -223,6 +223,10 @@ figure {
     animation: loadin 0.5s 0.4s forwards ease-in-out;
 }
 
+#nav-pagination>.ui.buttons {
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+}
+
 
 /*页脚*/
 
@@ -341,6 +345,98 @@ figure {
 
 .show-on {
     bottom: 2em;
+}
+
+
+/*归档时间线页面*/
+
+#archive-timeline {
+    border: 1px solid #e7eaf1;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+}
+
+.timeline {
+    margin: 2em 0 3em 10em;
+    border-left: 0.3em solid #cfcfcf;
+}
+
+.timeline-item-year {
+    user-select: none;
+    color: white;
+    display: inline-block;
+    padding: 0.3em;
+    font-size: 1.5em;
+    background-color: cornflowerblue;
+    border-radius: 0.3em;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
+    transform: translateX(-1.5em);
+}
+
+.timeline .timeline-item {
+    display: block;
+    margin: 2em 0em;
+}
+
+.timeline .time-point {
+    content: " ";
+    width: 1.8em;
+    height: 1.8em;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: bottom;
+    background-color: #e7eaf1;
+    border-radius: 50%;
+    border: 1px solid #d5dbe7;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+    transform: translateX(-4.44em) translateY(0.35em);
+}
+
+.timeline .time-point:before {
+    content: " ";
+    width: 0.8em;
+    height: 0.8em;
+    position: relative;
+    display: inline-block;
+    background-color: #666f72;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .5);
+    transform: translateX(0.44em) translateY(0.34em);
+}
+
+.timeline-item:hover .time-point {
+    border: 1px solid #d3d9e6;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .15);
+    transition: 0.2s ease-in-out;
+}
+
+.timeline-item:hover .time-point:before {
+    transform: scale(1.2) translateX(0.38em) translateY(0.3em);
+    transition: 0.2s ease-in-out;
+}
+
+.timeline span.timeline-item-date {
+    font-size: 1.2em;
+    color: #6c768c;
+    display: inline-block;
+    vertical-align: bottom;
+    transform: translateX(-4.5em);
+}
+
+.timeline a.timeline-item-title {
+    font-size: 1.5em;
+    color: #6c768c;
+    display: inline-block;
+    vertical-align: bottom;
+    transform: translateX(-2.5em);
+}
+
+.timeline a.timeline-item-section {
+    font-size: 0.6em;
+    display: inline-block;
+    vertical-align: bottom;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
+    transform: translateX(-5.5em);
 }
 
 

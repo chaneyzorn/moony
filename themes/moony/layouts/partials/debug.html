@@ -40,5 +40,24 @@
         <!---->
         {{ end }}
     </div>
+    <div class="ui warning message">
+        {{ with $.Site.Pages.GroupBy "Section" }}
+        <div class="header">$.Site.Pages.GroupBy "Section"</div>
+        {{ printf "%#v" . }}
+        <!---->
+        {{ end }}
+        <!---->
+        {{ with $.Site.Pages.GroupByDate "2006" }}
+        <div class="header">$.Site.Pages.GroupByDate "2006"</div>
+        {{ printf "%#v" . }}
+        <!---->
+        {{ end }}
+        <!---->
+        {{ with $.Site.Pages.GroupByDate "2016" }}
+        <div class="header">$.Site.Pages.GroupByDate "2016"</div>
+        {{ printf "%#v" . }}
+        <!---->
+        {{ end }}
+    </div>
 </debug>
 {{ end }}

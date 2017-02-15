@@ -9,30 +9,20 @@
 <div class="ui stackable grid container">
     <div id="left-content" class="eleven wide column">
         <div id="archive-timeline" class="ui segment">
-            <h1><i class="calendar icon"></i> 时间线</h1>
             <div class="timeline">
-            {{ $paginator := .Paginate ($.Site.Pages.GroupByDate "2006") }}
-            {{ range $paginator.PageGroups }}
-            <h2>{{ .Key }}</h2>
-            {{ range .Pages }}
-            <h3>{{ .Title }}</h3>
-            <h4>{{ .Kind }}</h4>
-            <a href="{{ .Permalink }}">{{ .Permalink }}</a>
-            <div class="ui divider"></div>
-            {{ end }}
-            {{ end }}
+                {{ $paginator := .Paginate (where $.Site.Pages "Type" "in" "tech essay") 10 }}
+                {{ range $paginator.Pages.GroupByDate "2006" }}
+                <div class="timeline-item-year">{{ .Key }}</div>
+                {{ range .Pages }}
+                {{ .Render "timeline-item" }}
+                {{ end }}
+                {{ end }}
             </div>
         </div>
-        <div class="ui divider"></div>
-        <div class="ui warning message">
-            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006")</div>
-            {{ printf "%#v" $paginator }}
-            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006").PageGroups</div>
-            {{ printf "%#v" $paginator.PageGroups }}
-            <div class="header">.Paginate ($.Site.Pages.GroupByDate "2006").Pages</div>
-            {{ printf "%#v" $paginator.Pages }}
-        </div>
+        <!---->
         {{ partial "pagination.html" $paginator }}
+        <!---->
+        {{ partial "debug.html" . }}
     </div>
     <div id="right-content" class="five wide column">
         {{ partial "sidebar.html" . }}
