@@ -357,39 +357,106 @@ figure {
 }
 
 .timeline {
+    opacity: 0;
     margin: 2em 0 3em 10em;
     border-left: 0.3em solid #cfcfcf;
+    animation: rightSliding 0.4s 0.1s forwards ease-in-out;
 }
 
 .timeline-item-year {
     user-select: none;
     color: white;
+    position: relative;
+    left: -1.5em;
     display: inline-block;
     padding: 0.3em;
     font-size: 1.5em;
+    opacity: 0;
     background-color: cornflowerblue;
     border-radius: 0.3em;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
-    transform: translateX(-1.5em);
+    animation: rightSliding 0.4s 0.2s forwards ease-in-out;
 }
 
 .timeline .timeline-item {
     display: block;
-    margin: 2em 0em;
+    margin: 4em 0em;
+    opacity: 0;
+}
+
+.timeline .timeline-item:nth-child(1) {
+    animation: loadin 0.5s 0.2s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(2) {
+    animation: loadin 0.5s 0.25s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(3) {
+    animation: loadin 0.5s 0.3s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(4) {
+    animation: loadin 0.5s 0.35s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(5) {
+    animation: loadin 0.5s 0.4s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(6) {
+    animation: loadin 0.5s 0.45s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(7) {
+    animation: loadin 0.5s 0.5s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(8) {
+    animation: loadin 0.5s 0.55s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(9) {
+    animation: loadin 0.5s 0.6s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(10) {
+    animation: loadin 0.5s 0.65s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(11) {
+    animation: loadin 0.5s 0.7s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(12) {
+    animation: loadin 0.5s 0.75s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(13) {
+    animation: loadin 0.5s 0.8s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(14) {
+    animation: loadin 0.5s 0.85s forwards ease-in-out;
+}
+
+.timeline .timeline-item:nth-child(15) {
+    animation: loadin 0.5s 0.9s forwards ease-in-out;
 }
 
 .timeline .time-point {
     content: " ";
     width: 1.8em;
     height: 1.8em;
-    opacity: 0.9;
+    position: relative;
+    top: 0.35em;
+    left: -4.45em;
     display: inline-block;
     vertical-align: bottom;
     background-color: #e7eaf1;
     border-radius: 50%;
     border: 1px solid #d5dbe7;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
-    transform: translateX(-4.44em) translateY(0.35em);
 }
 
 .timeline .time-point:before {
@@ -397,11 +464,12 @@ figure {
     width: 0.8em;
     height: 0.8em;
     position: relative;
+    top: 0.35em;
+    left: 0.445em;
     display: inline-block;
     background-color: #666f72;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .5);
-    transform: translateX(0.44em) translateY(0.34em);
 }
 
 .timeline-item:hover .time-point {
@@ -411,7 +479,7 @@ figure {
 }
 
 .timeline-item:hover .time-point:before {
-    transform: scale(1.2) translateX(0.38em) translateY(0.3em);
+    transform: scale(1.2);
     transition: 0.2s ease-in-out;
 }
 
@@ -419,24 +487,27 @@ figure {
     font-size: 1.2em;
     color: #6c768c;
     display: inline-block;
+    position: relative;
+    left: -4.5em;
     vertical-align: bottom;
-    transform: translateX(-4.5em);
 }
 
 .timeline a.timeline-item-title {
     font-size: 1.5em;
     color: #6c768c;
     display: inline-block;
+    position: relative;
+    left: -2.6em;
     vertical-align: bottom;
-    transform: translateX(-2.5em);
 }
 
 .timeline a.timeline-item-section {
     font-size: 0.6em;
     display: inline-block;
+    position: relative;
+    left: -6em;
     vertical-align: bottom;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
-    transform: translateX(-5.5em);
 }
 
 
@@ -540,6 +611,15 @@ figure {
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes showon {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
