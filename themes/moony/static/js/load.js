@@ -3,8 +3,8 @@ hljs.initHighlightingOnLoad();
 SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    json: '{{ .Site.BaseURL }}/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    json: '/search/',
+    searchResultTemplate: '<li><a href="{href}">{title}</a></li>',
     noResultsText: 'No results found',
     limit: 10,
     fuzzy: false,

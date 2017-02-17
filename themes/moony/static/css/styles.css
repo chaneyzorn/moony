@@ -735,7 +735,7 @@ code.mathjax {
 /*图片*/
 
 body.lg-on {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .lg-img {
