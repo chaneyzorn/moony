@@ -81,8 +81,25 @@ figure {
     background: #ffeff5;
 }
 
-.ui.icon.input>i.circular.icon {
-    top: 0.25em;
+#search-results {
+    height: 30em;
+    overflow-y: auto;
+    border: 1px solid #e7eaf1;
+    box-shadow: 0 1px 5px rgba(0, 37, 55, .25);
+}
+
+#search-results .title {
+    font-size: 1.2em;
+}
+
+#search-results .description {
+    margin: 0.5em 0 0 0;
+}
+
+#search-results .search-keyword {
+    border-bottom: 1px dashed #cfcfcf;
+    font-weight: bold;
+    color: #767676;
 }
 
 

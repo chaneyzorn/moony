@@ -1,19 +1,9 @@
 hljs.initHighlightingOnLoad();
 
-SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search/',
-    searchResultTemplate: '<li><a href="{href}">{title}</a></li>',
-    noResultsText: 'No results found',
-    limit: 10,
-    fuzzy: false,
-    exclude: ['Welcome']
-})
-
 $('.ui.dropdown').dropdown({
     on: 'hover'
 });
+
 $('.lg-img').dimmer({
     on: 'hover',
     opacity: 0.2,

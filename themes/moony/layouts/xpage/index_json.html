@@ -1,0 +1,9 @@
+[{{ range $index, $page := (where $.Site.Pages "Type" "in" "tech essay") }}
+{{ if $index }},{{ end }}
+{
+    "title": "{{ $page.Title }}",
+    "url": "{{ $page.RelPermalink }}",
+    "summary": {{ $page.Summary | plainify | jsonify }},
+    "content": {{ $page.Content | plainify | jsonify }}
+}{{ end }}
+]

@@ -40,15 +40,10 @@
                     <i class="user icon"></i><span class="text">关于</span>
                 </a>
                 <div class="right item">
-                    <form role="search">
-                        <div id="search-container">
-                            <div class="ui icon input">
-                                <input type="text" id="search-input" placeholder="Search...">
-                                <i class="circular search link icon"></i>
-                            </div>
-                            <ul style="margin-top: 0px; margin-bottom: 0px;" id="results-container"></ul>
-                        </div>
-                    </form>
+                    <div id="search" class="ui search">
+                        <input id="search-input" class="prompt" type="text" placeholder="Search..." autocomplete="off">
+                        <div id="search-results" class="results animation"></div>
+                    </div>
                 </div>
             </div>
         </div>
