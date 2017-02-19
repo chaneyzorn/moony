@@ -18,10 +18,22 @@ $(window).on('scroll', function() {
 });
 
 $('.back-top').on('click', function() {
-    $('body').velocity("scroll", {
+    $('html').velocity("scroll", {
         duration: 1000,
         easing: [25, 10]
     });
+});
+
+var TOC = $('#TableOfContents').children("ul").addClass("ui styled accordion");
+TOC.find("li").find("a").addClass("title");
+$("#TableOfContents li a:only-child").removeClass("title");
+TOC.find(".title").prepend("<i class='dropdown icon'></i>");
+TOC.find("ul").addClass("content");
+
+$('.ui.accordion').accordion({
+    selector: {
+        trigger: '.title .icon'
+    }
 });
 
 $('#article-content,#info-card').lightGallery({

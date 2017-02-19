@@ -8,8 +8,8 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui stackable grid container">
-    <div id="left-content" class="eleven wide column">
+<div id="main-content">
+    <div id="left-content">
         {{ $paginator := .Paginate (where $.Site.Pages "Type" "in" "tech essay") }}
         {{ range $paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
@@ -17,7 +17,7 @@
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div id="right-content" class="five wide column">
+    <div id="right-content">
         {{ partial "sidebar.html" . }}
         <!---->
         {{ partial "footer.html" . }}

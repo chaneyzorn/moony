@@ -3,11 +3,11 @@
 {{ define "title" }}<title>{{ .Title }} | {{ .Site.Title }}</title>{{ end }}
 
 {{ define "main" }}
-<div class="ui stackable grid container">
-    <div id="left-content" class="eleven wide column">
+<div id="main-content">
+    <div id="left-content">
         {{ .Render "content" }}
     </div>
-    <div id="right-content" class="five wide column">
+    <div id="right-content">
         {{ partial "sidebar.html" . }}
         {{ .TableOfContents }}
         {{ partial "footer.html" . }}

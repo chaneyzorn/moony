@@ -3,8 +3,8 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui stackable grid container">
-    <div id="left-content" class="eleven wide column">
+<div id="main-content">
+    <div id="left-content">
         <h1><i class="write icon"></i> 随笔</h1>
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
@@ -12,7 +12,7 @@
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div id="right-content" class="five wide column">
+    <div id="right-content">
         {{ partial "sidebar.html" . }}
         <!---->
         {{ partial "footer.html" . }}

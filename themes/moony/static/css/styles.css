@@ -22,15 +22,13 @@ p {
     margin: 1em 0;
 }
 
-figure {
-    margin: 1em 0;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.main.content {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-top: 100px;
-    margin-bottom: 1em;
+figure {
+    margin: 1em 0;
 }
 
 
@@ -104,7 +102,83 @@ figure {
 }
 
 
+/*中央主页*/
+
+.main.content {
+    margin-top: 6em;
+    margin-bottom: 1em;
+}
+
+#main-content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 0) {
+    #main-content {
+        width: 480px;
+    }
+}
+
+@media (min-width: 480px) {
+    #main-content {
+        width: 100%;
+    }
+}
+
+@media (min-width: 720px) {
+    #main-content {
+        width: 720px;
+    }
+}
+
+@media (min-width: 960px) {
+    #main-content {
+        width: 952px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main-content {
+        width: 980px;
+    }
+}
+
+
 /*左右页面*/
+
+#right-content {
+    position: relative;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: center;
+}
+
+@media (min-width: 960px) {
+    #left-content {
+        position: relative;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 2em;
+        float: left;
+    }
+    #right-content {
+        position: relative;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 2em;
+        float: right;
+    }
+}
 
 #left-content>h1 {
     opacity: 0;
@@ -235,6 +309,32 @@ figure {
 }
 
 
+/*文章目录*/
+
+#TableOfContents .ui.styled.accordion {
+    padding: 1em 0;
+    border: 1px solid #e7eaf1;
+    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+}
+
+#TableOfContents .ui.styled.accordion .title {
+    border: none;
+}
+
+#TableOfContents a {
+    display: inline-block;
+}
+
+#TableOfContents .title,
+#TableOfContents .content,
+#TableOfContents a:not(.title) {
+    padding-left: 2.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+}
+
+
 /*分页器*/
 
 #nav-pagination {
@@ -349,7 +449,7 @@ figure {
     text-align: center;
     border-width: 0;
     border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+    box-shadow: 0 1px 10px rgba(0, 37, 55, .05);
     background-color: #e7eaf1;
     transition: background-color 0.1s ease-in-out;
     transition: bottom 0.5s ease-in-out;
@@ -564,13 +664,11 @@ figure {
 /*装饰特效*/
 
 .underline a,
-#TableOfContents a,
 #article-content a {
     display: inline-block;
 }
 
 .underline a:after,
-#TableOfContents a:after,
 #article-content a:after {
     content: "";
     display: block;
@@ -582,7 +680,6 @@ figure {
 }
 
 .underline a:hover:after,
-#TableOfContents a:hover:after,
 #article-content a:hover:after {
     transform: scale(1);
 }
