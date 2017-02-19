@@ -1,14 +1,16 @@
 <div class="ui segments">
     <div id="article-header" class="ui segment">
         <a href="{{ .Permalink }}">
-            <h1>{{ .Title }}</h1>
-            <h1 style="flex-grow: 1;"></h1>
-            <span>{{ .WordCount }} Words</span>
+            <a id="session-link" class="ui blue right ribbon label" href="/tech/">技术</a>
+            <a id="title-link" href="{{ .Permalink }}">
+                <h1>{{ .Title }}</h1>
+            </a>
         </a>
     </div>
     <div id="article-info" class="ui segment">
         <div class="ui breadcrumb">
             <div class="section"><i class="calendar icon"></i> {{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</div>
+            <div id="word-count" class="section"><span>{{ .WordCount }} Words</span></div>
             {{ with .Params.tags }}
             <div id="article-tags" class="section underline">
                 {{ range . }}<i class="tag icon"></i><a id="article-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a> {{ end }}

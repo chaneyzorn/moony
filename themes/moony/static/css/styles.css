@@ -85,7 +85,7 @@ figure {
     height: 30em;
     overflow-y: auto;
     border: 1px solid #e7eaf1;
-    box-shadow: 0 1px 5px rgba(0, 37, 55, .25);
+    box-shadow: 0 5px 10px 0px rgba(146, 146, 146, 0.1);
 }
 
 #search-results .title {
@@ -93,6 +93,7 @@ figure {
 }
 
 #search-results .description {
+    color: rgba(0, 0, 0, 0.6);
     margin: 0.5em 0 0 0;
 }
 
@@ -186,14 +187,15 @@ figure {
     box-shadow: 0 5px 10px rgba(0, 37, 55, .05);
 }
 
-#article-header a {
-    display: flex;
+#session-link {
+    position: absolute;
+    left: initial;
+    right: -5.565em;
+    box-shadow: 0 1px 10px rgba(0, 37, 55, .25);
 }
 
-#article-header span {
-    color: #767676;
-    padding-top: 0.5em;
-    margin-left: auto;
+#title-link {
+    display: flex;
 }
 
 #article-info {
@@ -202,6 +204,7 @@ figure {
     background: #f7f8fa;
 }
 
+#word-count,
 #article-tags {
     padding-left: 0.6em;
     border-left: 1px solid #d3d9e6;
