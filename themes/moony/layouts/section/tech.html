@@ -4,7 +4,7 @@
 
 {{ define "main" }}
 <div id="main-content">
-    <div id="left-content">
+    <div class="left-content">
         <h1><i class="desktop icon"></i> 技术</h1>
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
@@ -12,7 +12,7 @@
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div id="right-content">
+    <div class="right-content">
         {{ partial "sidebar.html" . }}
         <!---->
         {{ partial "footer.html" . }}

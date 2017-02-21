@@ -4,18 +4,22 @@ var $resultContent = document.getElementById("search-results");
 
 //搜索框交互，根据使用的UI而定
 function show() {
+    $("#search").addClass("show-result");
     $('#search-results').removeClass("animating scale out").addClass("animating scale in");
-    $('#search-results').removeClass("hidden").addClass("visible");
+    $("#search-results").removeClass("hidden").addClass("visible");
 }
 
 function hide() {
     $('#search-results').removeClass("animating scale in").addClass("animating scale out");
     setTimeout('$("#search-results").removeClass("visible").addClass("hidden")', 200); //给它一段动画的时间
+    setTimeout('$("#search").removeClass("show-result")', 200);
 }
 
 $("#search-input").focus(function() {
     $('#search').addClass("focus");
-    show();
+    $("#search").addClass("show-result");
+    $('#search-results').removeClass("animating scale out").addClass("animating scale in");
+    setTimeout('$("#search-results").removeClass("hidden").addClass("visible")', 200);
 });
 $("#search-input").blur(function() {
     if (!$('#search-results').is(':hover')) {
@@ -31,7 +35,7 @@ $.getJSON("/index_json/", function(index) {
         $resultContent.innerHTML = "";
         //获取输入的关键词
         var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-        if (keywords == "") {
+        if (keywords == "" || this.value.trim().length < 2) {
             //如果关键词为空，则不生成搜查结果，并且隐藏
             setTimeout('$("#search-results").removeClass("transition")', 200);
             hide();

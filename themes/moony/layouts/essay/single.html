@@ -4,15 +4,24 @@
 
 {{ define "main" }}
 <div id="main-content">
-    <div id="left-content">
+    <div class="left-content">
         {{ .Render "content" }}
         <!---->
         {{ partial "debug.html" . }}
     </div>
-    <div id="right-content">
-        {{ partial "sidebar.html" . }}
-        {{ .TableOfContents }}
-        {{ partial "footer.html" . }}
+    <div id="sidebar" class="right-content sidebar-show">
+        <div>
+            {{ partial "sidebar.html" . }}
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</div>
+<div id="TOC-container" class="toc-hide">
+    <div id="TOC">
+        <div id="toc-content" class="right-content">
+            <button id="toc-button" class="ui top attached button">文章目录</button>
+            {{ .TableOfContents }}
+        </div>
     </div>
 </div>
 {{ end }}
