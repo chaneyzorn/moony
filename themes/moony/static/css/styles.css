@@ -371,6 +371,12 @@ figure {
     margin: 0;
 }
 
+#TableOfContents .title.active.curr a,
+#TableOfContents a.last-level.curr {
+    color: lightcoral;
+    font-weight: bold;
+}
+
 @media (min-width: 980px) {
     #TOC-container.toc-show {
         bottom: 85.8%;
