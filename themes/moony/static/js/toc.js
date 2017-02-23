@@ -1,4 +1,4 @@
-// 文章目录 Hook!!!
+// 文章目录 Hook!!! 无敌组合暗坑：点击滚动、快速定位
 var TOC = $('#TableOfContents').addClass("ui styled accordion");
 var toclinks = TOC.find("a");
 var lastY = new Array(); //用于记录每一个标题上次的位置
@@ -59,7 +59,7 @@ function switchCurr(toCurr) {
         TOC.find(".curr").removeClass("curr");
         // 添加新的curr标志
         toCurr.addClass("curr");
-        console.log(toCurr.attr('href'));
+        // console.log(toCurr.attr('href'));
         // 父级目录全部标记curr
         toCurr.parentsUntil("#TableOfContents").filter(".title, .content").each(function() {
             // 利用父层全部选中,添加标记
@@ -70,6 +70,13 @@ function switchCurr(toCurr) {
         // 非curr的全部关闭
         TOC.find(".title, .content").not(".curr").each(function() {
             $(this).removeClass("active");
+        });
+        // 定位目录到视野
+        toCurr.velocity("scroll", {
+            container: TOC,
+            duration: 1500,
+            offset: -120,
+            easing: [25, 10]
         });
     }
 }
@@ -103,7 +110,7 @@ if (TOC.length == 0) {
     // 目录链接定位
     toclinks.on("click", function() {
         $($(this).attr('href')).velocity("scroll", {
-            duration: 200,
+            duration: 1000,
             offset: -70,
             easing: [25, 10]
         });
