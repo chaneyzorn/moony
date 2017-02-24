@@ -1,4 +1,4 @@
-// 文章目录 Hook!!! 无敌组合暗坑：点击滚动、快速定位
+// 文章目录 Hook!!!
 var TOC = $('#TableOfContents').addClass("ui styled accordion");
 var toclinks = TOC.find("a");
 var lastY = new Array(); //用于记录每一个标题上次的位置
@@ -25,6 +25,7 @@ function passBy(index, link) {
 }
 
 function updateY(switchTag) {
+    //快速定位会产生批量跨界
     var chain = new Array();
     var direct = "un";
     toclinks.each(function(index, link) {
@@ -43,10 +44,10 @@ function updateY(switchTag) {
     });
     if (switchTag && chain.length) {
         switch (direct) {
-            case "up":
+            case "up": //高亮最后一个
                 switchCurr($(chain.pop()));
                 break;
-            case "down":
+            case "down": //高亮头一个
                 switchCurr($(chain.shift()));
                 break;
         }
@@ -74,7 +75,7 @@ function switchCurr(toCurr) {
         // 定位目录到视野
         toCurr.velocity("scroll", {
             container: TOC,
-            duration: 1500,
+            duration: 800,
             offset: -120,
             easing: [25, 10]
         });
@@ -109,10 +110,21 @@ if (TOC.length == 0) {
     $(window).on('scroll', delayUpdateY);
     // 目录链接定位
     toclinks.on("click", function() {
+        // 视野在目录上，层叠目录晃眼，取消实时高亮
+        $(window).off();
+        // 误伤友军
+        $(window).on('scroll', function() {
+            $('.back-top').toggleClass('show-on', window.pageYOffset > 50);
+        });
         $($(this).attr('href')).velocity("scroll", {
-            duration: 1000,
+            duration: 800,
             offset: -70,
             easing: [25, 10]
         });
+        // 手动高亮提高体验
+        switchCurr($(this));
+        // 滚完再说，防止层叠目录乱颤
+        setTimeout('updateY(true)', 1000);
+        setTimeout("$(window).on('scroll', delayUpdateY)", 1500);
     });
 }

@@ -1,8 +1,8 @@
 <header>
     <div id="header-content">
-        <div class="ui circular labels">
-            <div id="nav-menu" class="ui top fixed stackable menu">
-                <a class="item" href="{{ .Site.BaseURL }}">
+        <div id="nav-container" class="ui circular labels">
+            <div id="nav-menu" class="ui top fixed borderless menu">
+                <a id="brand" class="item mobile" href="{{ .Site.BaseURL }}">
                     <b><i class="home icon"></i>{{ .Site.Title }}</b>
                 </a>
                 <div class="ui dropdown item">
@@ -11,11 +11,6 @@
                         <div class="header"><a href="/tech/"><i class="desktop icon"></i> 技术</a></div>
                         <div class="divider"></div>
                         <a class="disabled item" href="/tags/java/">Java</a>
-                        <!--<a class="disabled item">Go</a>-->
-                        <!--<a class="disabled item">Python</a>-->
-                        <!--<a class="disabled item">Javascript</a>-->
-                        <!--<a class="disabled item">Rust</a>-->
-                        <!--<a class="disabled item">C/C++</a>-->
                         <a class="disabled item">GNU/Linux</a>
                         <div class="header"><a href="/essay/"><i class="write icon"></i> 随笔</a></div>
                         <div class="divider"></div>
@@ -39,11 +34,9 @@
                 <a class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
                     <i class="user icon"></i><span class="text">关于</span>
                 </a>
-                <div class="right item">
-                    <div id="search" class="ui search">
-                        <input id="search-input" class="prompt" type="text" placeholder="Search..." autocomplete="off">
-                        <div id="search-results" class="results animation"></div>
-                    </div>
+                <div id="search" class="ui search item mobile">
+                    <input id="search-input" class="prompt" type="text" placeholder="Search..." autocomplete="off">
+                    <div id="search-results" class="results animation"></div>
                 </div>
             </div>
         </div>

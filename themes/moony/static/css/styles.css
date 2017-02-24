@@ -36,8 +36,6 @@ figure {
 
 #nav-menu {
     opacity: 0;
-    padding-left: 10%;
-    padding-right: 10%;
     border: 1px solid #e7eaf1;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
     animation: loadin 0.5s forwards ease-in-out;
@@ -52,10 +50,6 @@ figure {
     padding-bottom: 0.7em;
 }
 
-.ui.menu .item:before {
-    background: rgba(255, 255, 255, 0);
-}
-
 .ui.dropdown .menu>.header {
     font-size: 1em;
 }
@@ -67,8 +61,17 @@ figure {
 
 /*搜索框*/
 
+#search {
+    display: flex;
+    float: right;
+    flex-grow: 1;
+    margin-left: auto;
+}
+
 #search-input {
-    width: 14em;
+    width: 50%;
+    float: right;
+    margin-left: auto;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
     background: #f7f8fa;
@@ -76,14 +79,17 @@ figure {
     transition: all 0.3s ease-in-out;
 }
 
-#search-input:focus,
-#search.show-result #search-input {
-    width: 17.7em;
+#search-input:focus {
+    width: 80%;
     background: #ffeff5;
 }
 
 #search-results {
+    margin: 0;
+    width: 80%;
     height: 30em;
+    left: initial;
+    right: 0;
     overflow-y: auto;
     border: 1px solid #e7eaf1;
     box-shadow: 0 5px 10px 0px rgba(146, 146, 146, 0.1);
@@ -128,14 +134,45 @@ figure {
     margin-bottom: 1em;
 }
 
-@media (min-width: 0) {
-    #TOC,
-    #main-content {
-        width: 480px;
+@media (max-width: 800px) {
+    #nav-menu>.item:not(.mobile) {
+        display: none;
+    }
+    #nav-menu>#brand.mhidden {
+        animation: mhidden 0.2s forwards ease-in-out;
+    }
+    #nav-menu>#brand.mshow {
+        animation: mshow 0.2s forwards ease-in-out;
+    }
+    #search-input {
+        width: 12em;
+    }
+    #search-input:focus {
+        width: 100%;
+    }
+    #search-results {
+        width: 100%;
     }
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
+    #word-count,
+    #article-tags {
+        display: none;
+    }
+    .lg-img .center {
+        font-size: 4em !important;
+    }
+}
+
+@media (min-width: 0) {
+    #TOC,
+    #main-content {
+        width: 300px;
+    }
+}
+
+@media (min-width: 300px) {
     #TOC,
     #main-content {
         width: 100%;
@@ -154,6 +191,10 @@ figure {
     #main-content {
         width: 980px;
     }
+    #nav-menu {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 
@@ -168,6 +209,10 @@ figure {
     margin-bottom: 4em;
     float: center;
     animation: rightSliding 0.5s 0.2s forwards ease-in-out;
+}
+
+#toc-content.right-content {
+    animation: upSliding 0.5s 0.2s forwards ease-in-out;
 }
 
 @media (min-width: 980px) {
@@ -268,7 +313,7 @@ figure {
 #session-link {
     position: absolute;
     left: initial;
-    right: -5.565em;
+    right: -5.6em;
     box-shadow: 0 1px 10px rgba(0, 37, 55, .25);
 }
 
@@ -335,7 +380,7 @@ figure {
 
 #toc-button {
     width: 100%;
-    box-shadow: 0 1px 3px rgba(0, 37, 55, .05) !important;
+    box-shadow: 0 -1px 10px rgba(0, 37, 55, .25) !important;
 }
 
 #TableOfContents.ui.styled.accordion {
@@ -346,7 +391,7 @@ figure {
     border: 1px solid #e7eaf1;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
+    box-shadow: 0 1px 10px rgba(0, 37, 55, .05);
 }
 
 #TableOfContents.ui.styled.accordion .title {
@@ -354,6 +399,7 @@ figure {
 }
 
 #TableOfContents a {
+    color: #707070;
     display: inline-block;
 }
 
@@ -373,7 +419,7 @@ figure {
 
 #TableOfContents .title.active.curr a,
 #TableOfContents a.last-level.curr {
-    color: lightcoral;
+    color: #373277;
     font-weight: bold;
 }
 
@@ -775,6 +821,17 @@ figure {
     }
 }
 
+@keyframes upSliding {
+    0% {
+        opacity: 0;
+        transform: translateY(5em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes upFade {
     0% {
         opacity: 1;
@@ -808,12 +865,33 @@ figure {
     }
 }
 
-@keyframes showon {
+@keyframes mshow {
     0% {
         opacity: 0;
+        transform: scale(0);
     }
     100% {
         opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes mhidden {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
     }
 }
 
