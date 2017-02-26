@@ -2,7 +2,7 @@
     <div id="header-content">
         <div id="nav-container" class="ui circular labels">
             <div id="nav-menu" class="ui top fixed borderless menu">
-                <a id="brand" class="item mobile" href="{{ .Site.BaseURL }}">
+                <a id="brand" class="item mobile" href="/">
                     <b><i class="home icon"></i>{{ .Site.Title }}</b>
                 </a>
                 <div class="ui dropdown item">
@@ -19,19 +19,19 @@
                         <a class="disabled item">无想</a>
                     </div>
                 </div>
-                <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                <div class="ui dropdown disabled item" href="/">
                     <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
                     <div class="menu">
                         <div class="disabled item">暂无</div>
                     </div>
                 </div>
-                <div class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                <div class="ui dropdown disabled item" href="/">
                     <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
                     <div class="menu">
                         <div class="disabled item">暂无</div>
                     </div>
                 </div>
-                <a class="ui dropdown disabled item" href="{{ .Site.BaseURL }}">
+                <a class="ui dropdown disabled item" href="/">
                     <i class="user icon"></i><span class="text">关于</span>
                 </a>
                 <div id="search" class="ui search item mobile">

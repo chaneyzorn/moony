@@ -79,10 +79,10 @@ function localSearch(index, inputValue) {
                     str += "<a href='" + article_url + "' class='result'><div class='content'><div class='title'>" + article_title + "</div>";
                     if (first_occur >= 0) { //内容中有匹配的结果
                         // 根据匹配的第一个位置，截取附近的100个字符
-                        var start = first_occur - 20;
-                        var end = first_occur + 80;
+                        var start = first_occur - 50;
+                        var end = first_occur + 150;
                         if (start < 0) { start = 0; }
-                        if (start == 0) { end = 50; }
+                        if (start == 0) { end = 100; }
                         if (end > content.length) {
                             end = content.length;
                         }

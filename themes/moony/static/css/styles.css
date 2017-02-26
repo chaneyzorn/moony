@@ -1,14 +1,17 @@
 /*全局*/
 
 body {
-    background: #f7f8fa;
+    color: #555;
+    background-color: #f7f8fa;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
+    color: #494949;
     margin: 0;
 }
 
@@ -18,8 +21,8 @@ a:hover {
 }
 
 p {
-    line-height: 2em;
-    margin: 1em 0;
+    line-height: 2.2em;
+    margin: 1.5em 0;
 }
 
 ul {
@@ -32,13 +35,120 @@ figure {
 }
 
 
+/*载入、刷新效果*/
+
+@media (min-width: 800px) {
+    #nav-menu {
+        opacity: 0;
+        animation: loadin 0.5s forwards ease-in-out;
+    }
+    .right-content {
+        opacity: 0;
+        animation: rightSliding 0.5s 0.2s forwards ease-in-out;
+    }
+    .left-content>h1 {
+        opacity: 0;
+        animation: leftSliding 0.5s 0.3s forwards ease-in-out;
+    }
+    .left-content .ui.segments {
+        opacity: 0;
+    }
+    .left-content .ui.segments:nth-of-type(1) {
+        animation: loadin 0.5s 0.1s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(2) {
+        animation: loadin 0.5s 0.15s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(3) {
+        animation: loadin 0.5s 0.2s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(4) {
+        animation: loadin 0.5s 0.25s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(5) {
+        animation: loadin 0.5s 0.3s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(6) {
+        animation: loadin 0.5s 0.35s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(7) {
+        animation: loadin 0.5s 0.4s forwards ease-in-out;
+    }
+    .left-content .ui.segments:nth-of-type(8) {
+        animation: loadin 0.5s 0.45s forwards ease-in-out;
+    }
+    #nav-pagination {
+        opacity: 0;
+        animation: loadin 0.5s 0.4s forwards ease-in-out;
+    }
+    .timeline {
+        opacity: 0;
+        animation: rightSliding 0.4s 0.1s forwards ease-in-out;
+    }
+    .timeline-item-year {
+        opacity: 0;
+        animation: rightSliding 0.5s 0.2s forwards ease-in-out;
+    }
+    .timeline .timeline-item {
+        opacity: 0;
+    }
+    .timeline .timeline-item:nth-child(1) {
+        animation: loadin 0.5s 0.2s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(2) {
+        animation: loadin 0.5s 0.25s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(3) {
+        animation: loadin 0.5s 0.3s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(4) {
+        animation: loadin 0.5s 0.35s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(5) {
+        animation: loadin 0.5s 0.4s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(6) {
+        animation: loadin 0.5s 0.45s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(7) {
+        animation: loadin 0.5s 0.5s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(8) {
+        animation: loadin 0.5s 0.55s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(9) {
+        animation: loadin 0.5s 0.6s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(10) {
+        animation: loadin 0.5s 0.65s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(11) {
+        animation: loadin 0.5s 0.7s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(12) {
+        animation: loadin 0.5s 0.75s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(13) {
+        animation: loadin 0.5s 0.8s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(14) {
+        animation: loadin 0.5s 0.85s forwards ease-in-out;
+    }
+    .timeline .timeline-item:nth-child(15) {
+        animation: loadin 0.5s 0.9s forwards ease-in-out;
+    }
+    .page404 .ui.segments {
+        opacity: 0;
+        animation: arise 0.5s 0.1s forwards ease-in-out;
+    }
+}
+
+
 /*导航栏*/
 
 #nav-menu {
-    opacity: 0;
     border: 1px solid #e7eaf1;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
-    animation: loadin 0.5s forwards ease-in-out;
 }
 
 .ui.menu {
@@ -46,6 +156,7 @@ figure {
 }
 
 .ui.menu .item {
+    color: #494949;
     padding-top: 0.7em;
     padding-bottom: 0.7em;
 }
@@ -206,14 +317,12 @@ figure {
 /*左右页面*/
 
 .right-content {
-    opacity: 0;
     width: 20em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
     margin-bottom: 4em;
     float: center;
-    animation: rightSliding 0.5s 0.2s forwards ease-in-out;
 }
 
 #toc-content.right-content {
@@ -237,51 +346,6 @@ figure {
         margin-bottom: 2em;
         float: right;
     }
-}
-
-.left-content>h1 {
-    opacity: 0;
-    animation: leftSliding 0.5s 0.3s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(1) {
-    opacity: 0;
-    animation: loadin 0.5s 0.1s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(2) {
-    opacity: 0;
-    animation: loadin 0.5s 0.15s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(3) {
-    opacity: 0;
-    animation: loadin 0.5s 0.2s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(4) {
-    opacity: 0;
-    animation: loadin 0.5s 0.25s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(5) {
-    opacity: 0;
-    animation: loadin 0.5s 0.3s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(6) {
-    opacity: 0;
-    animation: loadin 0.5s 0.35s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(7) {
-    opacity: 0;
-    animation: loadin 0.5s 0.4s forwards ease-in-out;
-}
-
-.left-content .ui.segments:nth-of-type(8) {
-    opacity: 0;
-    animation: loadin 0.5s 0.45s forwards ease-in-out;
 }
 
 
@@ -347,8 +411,8 @@ figure {
 /*文章内容*/
 
 #article-content {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1.1em;
+    line-height: 2em;
     padding-top: 0.8em;
     padding-bottom: 0.8em;
 }
@@ -359,7 +423,13 @@ figure {
 #article-content h4,
 #article-content h5,
 #article-content h6 {
-    margin: 0.5em 0;
+    margin: 1.2em 0;
+}
+
+#article-content p {
+    font-size: 1em;
+    line-height: 2em;
+    margin: 2em 0;
 }
 
 
@@ -445,8 +515,6 @@ figure {
 
 #nav-pagination {
     text-align: center;
-    opacity: 0;
-    animation: loadin 0.5s 0.4s forwards ease-in-out;
 }
 
 #nav-pagination>.ui.buttons {
@@ -583,10 +651,8 @@ figure {
 }
 
 .timeline {
-    opacity: 0;
     margin: 2em 0 3em 10em;
     border-left: 0.3em solid #cfcfcf;
-    animation: rightSliding 0.4s 0.1s forwards ease-in-out;
 }
 
 .timeline-item-year {
@@ -597,77 +663,14 @@ figure {
     display: inline-block;
     padding: 0.3em;
     font-size: 1.5em;
-    opacity: 0;
     background-color: cornflowerblue;
     border-radius: 0.3em;
     box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
-    animation: rightSliding 0.5s 0.2s forwards ease-in-out;
 }
 
 .timeline .timeline-item {
     display: block;
     margin: 4em 0em;
-    opacity: 0;
-}
-
-.timeline .timeline-item:nth-child(1) {
-    animation: loadin 0.5s 0.2s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(2) {
-    animation: loadin 0.5s 0.25s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(3) {
-    animation: loadin 0.5s 0.3s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(4) {
-    animation: loadin 0.5s 0.35s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(5) {
-    animation: loadin 0.5s 0.4s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(6) {
-    animation: loadin 0.5s 0.45s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(7) {
-    animation: loadin 0.5s 0.5s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(8) {
-    animation: loadin 0.5s 0.55s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(9) {
-    animation: loadin 0.5s 0.6s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(10) {
-    animation: loadin 0.5s 0.65s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(11) {
-    animation: loadin 0.5s 0.7s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(12) {
-    animation: loadin 0.5s 0.75s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(13) {
-    animation: loadin 0.5s 0.8s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(14) {
-    animation: loadin 0.5s 0.85s forwards ease-in-out;
-}
-
-.timeline .timeline-item:nth-child(15) {
-    animation: loadin 0.5s 0.9s forwards ease-in-out;
 }
 
 .timeline .time-point {
@@ -745,10 +748,8 @@ figure {
 }
 
 .page404 .ui.segments {
-    opacity: 0;
     display: inline-block;
     text-align: initial;
-    animation: arise 0.5s 0.1s forwards ease-in-out;
 }
 
 .page404 h3 {
@@ -917,6 +918,8 @@ figure {
 }
 
 .code-block {
+    font-size: 1.2rem;
+    line-height: 2rem;
     display: flex;
 }
 
@@ -1021,8 +1024,14 @@ body.lg-on {
     overflow: hidden;
 }
 
+.ui.card .lg-img {
+    cursor: pointer;
+    margin: 0;
+}
+
 .lg-img {
     cursor: pointer;
+    margin: 2em 0;
 }
 
 .lg-img.left.floated {
