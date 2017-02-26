@@ -3,7 +3,6 @@
 body {
     color: #555;
     background-color: #f7f8fa;
-    overflow-x: hidden;
 }
 
 h1,
@@ -235,7 +234,7 @@ figure {
     width: 100%;
     height: 0;
     bottom: initial;
-    transition: bottom 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 #TOC,
@@ -265,6 +264,9 @@ figure {
     #search-results {
         width: 100%;
     }
+    .left-content .ui.segments {
+        overflow-x: hidden;
+    }
 }
 
 @media (max-width: 480px) {
@@ -279,6 +281,24 @@ figure {
         width: 10em;
         left: 0;
         right: initial;
+    }
+    .timeline {
+        margin: 2em 0 3em 4.5em !important;
+    }
+    .timeline span.timeline-item-date {
+        font-size: 1em !important;
+        left: -4em !important;
+    }
+    .timeline .time-point {
+        left: -3.9em !important;
+    }
+    .timeline a.timeline-item-title {
+        font-size: 1em !important;
+        left: -4.5em !important;
+    }
+    .timeline a.timeline-item-section {
+        font-size: 0.3em !important;
+        left: -7.8em !important;
     }
 }
 
@@ -613,8 +633,8 @@ figure {
     position: fixed;
     right: 2em;
     bottom: -100%;
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     padding: 0;
     color: #8d9eb3;
     cursor: pointer;
