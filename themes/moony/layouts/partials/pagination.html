@@ -21,23 +21,23 @@
                 <a href="{{ .URL }}" class="ui icon button {{ if eq .PageNumber $curPgNum }}active{{ end }}"> {{ .PageNumber }} </a>
                 {{ end }}
                 <a class="ui icon disabled button">...</a>
-                <a href="{{ .Site.BaseURL }}page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
+                <a href="/page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
             {{ else if gt $curPgNum (sub .TotalPages 4) }}
-                <a href="{{ .Site.BaseURL }}" class="ui icon button"> 1 </a>
+                <a href="/" class="ui icon button"> 1 </a>
                 <a class="ui icon disabled button">...</a>
                 {{ range after (sub $curPgNum 3) .Pagers }}
                 <a href="{{ .URL }}" class="ui icon button {{ if eq .PageNumber $curPgNum }}active{{ end }}"> {{ .PageNumber }} </a>
                 {{ end }}
             {{ else }}
-                <a href="{{ .Site.BaseURL }}" class="ui icon button"> 1 </a>
+                <a href="/" class="ui icon button"> 1 </a>
                 <a class="ui icon disabled button">...</a>
-                <a href="{{ .Site.BaseURL }}page/{{ sub $curPgNum 2 }}/" class="ui icon button"> {{ sub $curPgNum 2 }} </a>
-                <a href="{{ .Site.BaseURL }}page/{{ sub $curPgNum 1 }}/" class="ui icon button"> {{ sub $curPgNum 1 }} </a>
-                <a href="{{ .Site.BaseURL }}page/{{ $curPgNum }}/" class="ui icon active button"> {{ $curPgNum }} </a>
-                <a href="{{ .Site.BaseURL }}page/{{ add $curPgNum 1 }}/" class="ui icon button"> {{ add $curPgNum 1 }} </a>
-                <a href="{{ .Site.BaseURL }}page/{{ add $curPgNum 2 }}/" class="ui icon button"> {{ add $curPgNum 2 }} </a>
+                <a href="/page/{{ sub $curPgNum 2 }}/" class="ui icon button"> {{ sub $curPgNum 2 }} </a>
+                <a href="/page/{{ sub $curPgNum 1 }}/" class="ui icon button"> {{ sub $curPgNum 1 }} </a>
+                <a href="/page/{{ $curPgNum }}/" class="ui icon active button"> {{ $curPgNum }} </a>
+                <a href="/page/{{ add $curPgNum 1 }}/" class="ui icon button"> {{ add $curPgNum 1 }} </a>
+                <a href="/page/{{ add $curPgNum 2 }}/" class="ui icon button"> {{ add $curPgNum 2 }} </a>
                 <a class="ui icon disabled button">...</a>
-                <a href="{{ .Site.BaseURL }}page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
+                <a href="/page/{{ .TotalPages }}/" class="ui icon button"> {{ .TotalPages }} </a>
             {{ end }}
         {{ end }}
         {{ if .HasNext }}

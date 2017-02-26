@@ -69,7 +69,7 @@ figure {
 }
 
 #search-input {
-    width: 50%;
+    width: 15em;
     float: right;
     margin-left: auto;
     padding-top: 0.6em;
@@ -79,14 +79,14 @@ figure {
     transition: all 0.3s ease-in-out;
 }
 
-#search-input:focus {
-    width: 80%;
+#search.focus #search-input {
+    width: 100%;
     background: #ffeff5;
 }
 
 #search-results {
     margin: 0;
-    width: 80%;
+    width: 100%;
     height: 30em;
     left: initial;
     right: 0;
@@ -139,15 +139,15 @@ figure {
         display: none;
     }
     #nav-menu>#brand.mhidden {
-        animation: mhidden 0.2s forwards ease-in-out;
+        animation: mhidden 0.1s forwards ease-in-out;
     }
     #nav-menu>#brand.mshow {
         animation: mshow 0.2s forwards ease-in-out;
     }
     #search-input {
-        width: 12em;
+        width: 18em;
     }
-    #search-input:focus {
+    #search.focus #search-input {
         width: 100%;
     }
     #search-results {
@@ -162,6 +162,11 @@ figure {
     }
     .lg-img .center {
         font-size: 4em !important;
+    }
+    #search-input {
+        width: 10em;
+        left: 0;
+        right: initial;
     }
 }
 
@@ -881,9 +886,15 @@ figure {
         opacity: 1;
         transform: scale(1);
     }
+    45% {
+        opacity: 0;
+        transform: scale(0);
+    }
     50% {
         opacity: 0;
         transform: scale(0);
+        width: 0;
+        padding: 0;
     }
     100% {
         opacity: 0;

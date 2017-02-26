@@ -1,5 +1,5 @@
 title: "吾月"
-baseurl: "http://moonye.me/"
+baseURL: "http://moonye.me/"
 
 languageCode: "zh-cn"
 defaultContentLanguage: "zh-cn"

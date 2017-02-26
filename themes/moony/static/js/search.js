@@ -27,7 +27,7 @@ input.blur(function() {
         hide();
     }
     search.removeClass("focus");
-    setTimeout('$("#brand").removeClass("mhidden").addClass("mshow")', 500);
+    setTimeout('$("#brand").removeClass("mhidden").addClass("mshow")', 300);
 });
 
 //静态博客站内搜索
