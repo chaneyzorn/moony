@@ -3,6 +3,7 @@
 body {
     color: #555;
     background-color: #f7f8fa;
+    overflow-x: hidden;
 }
 
 h1,
@@ -756,6 +757,11 @@ figure {
     text-align: center;
     color: #e8e8e8;
     font-size: 1.8rem;
+}
+
+#todo {
+    height: 25em;
+    overflow-y: auto;
 }
 
 #todo .item {
