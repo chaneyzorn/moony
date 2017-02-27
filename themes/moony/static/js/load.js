@@ -1,3 +1,16 @@
+// 导航栏自动显隐
+var navHeader = document.getElementById("nav-menu");
+var headroom = new Headroom(navHeader, {
+    "tolerance": 5,
+    "offset": 200,
+    "classes": {
+        "initial": "animated",
+        "pinned": "slideDown",
+        "unpinned": "slideUp"
+    }
+});
+headroom.init();
+
 // 代码高亮
 hljs.initHighlightingOnLoad();
 

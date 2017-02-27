@@ -4,23 +4,22 @@ var resultContent = $("#search-results");
 
 //搜索框交互，根据使用的UI而定
 function show() {
-    search.addClass("show-result");
     resultContent.removeClass("animating scale out").addClass("animating scale in");
     resultContent.removeClass("hidden").addClass("visible");
 }
 
 function hide() {
     resultContent.removeClass("animating scale in").addClass("animating scale out");
-    setTimeout('resultContent.removeClass("visible").addClass("hidden")', 200); //给它一段动画的时间
-    setTimeout('search.removeClass("show-result")', 200);
+    setTimeout('resultContent.removeClass("visible").addClass("hidden")', 200); //给它一段动画的时间再隐藏
 }
 
 input.focus(function() {
     $("#brand").removeClass("mshow").addClass("mhidden");
     search.addClass("focus");
-    search.addClass("show-result");
+    $("#cancel-search").addClass("show");
+    $("body").addClass("disabled");
     resultContent.removeClass("animating scale out").addClass("animating scale in");
-    setTimeout('resultContent.removeClass("hidden").addClass("visible")', 200);
+    resultContent.removeClass("hidden").addClass("visible");
 });
 input.blur(function() {
     if (!resultContent.is(':hover')) {
@@ -28,6 +27,8 @@ input.blur(function() {
     }
     search.removeClass("focus");
     setTimeout('$("#brand").removeClass("mhidden").addClass("mshow")', 300);
+    setTimeout('$("#cancel-search").removeClass("show");', 50); //防止瞬间的消失导致input被再次focus
+    $("body").removeClass("disabled");
 });
 
 //静态博客站内搜索

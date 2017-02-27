@@ -151,6 +151,104 @@ figure {
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
 
+#nav-menu.animated {
+    opacity: 1;
+    -webkit-animation-duration: .5s;
+    -moz-animation-duration: .5s;
+    -o-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+        -webkit-transform: translateY(-4em)
+    }
+    100% {
+        -webkit-transform: translateY(0)
+    }
+}
+
+@-moz-keyframes slideDown {
+    0% {
+        -moz-transform: translateY(-4em)
+    }
+    100% {
+        -moz-transform: translateY(0)
+    }
+}
+
+@-o-keyframes slideDown {
+    0% {
+        -o-transform: translateY(-4em)
+    }
+    100% {
+        -o-transform: translateY(0)
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-4em)
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+#nav-menu.animated.slideDown {
+    -webkit-animation-name: slideDown;
+    -moz-animation-name: slideDown;
+    -o-animation-name: slideDown;
+    animation-name: slideDown
+}
+
+@-webkit-keyframes slideUp {
+    0% {
+        -webkit-transform: translateY(0)
+    }
+    100% {
+        -webkit-transform: translateY(-4em)
+    }
+}
+
+@-moz-keyframes slideUp {
+    0% {
+        -moz-transform: translateY(0)
+    }
+    100% {
+        -moz-transform: translateY(-4em)
+    }
+}
+
+@-o-keyframes slideUp {
+    0% {
+        -o-transform: translateY(0)
+    }
+    100% {
+        -o-transform: translateY(-4em)
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-4em)
+    }
+}
+
+#nav-menu.animated.slideUp {
+    -webkit-animation-name: slideUp;
+    -moz-animation-name: slideUp;
+    -o-animation-name: slideUp;
+    animation-name: slideUp
+}
+
 .ui.menu {
     font-size: 1.1rem;
 }
@@ -185,13 +283,14 @@ figure {
     margin-left: auto;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
+    flex: initial;
     background: #f7f8fa;
     border: none;
     transition: all 0.3s ease-in-out;
 }
 
 #search.focus #search-input {
-    width: 100%;
+    flex-grow: 1;
     background: #ffeff5;
 }
 
@@ -219,6 +318,12 @@ figure {
     border-bottom: 1px dashed #cfcfcf;
     font-weight: bold;
     color: #767676;
+}
+
+#cancel-search {
+    display: none;
+    opacity: 0.8;
+    font-size: 2em;
 }
 
 
@@ -259,10 +364,18 @@ figure {
         width: 18em;
     }
     #search.focus #search-input {
-        width: 100%;
+        flex-grow: 1;
     }
     #search-results {
         width: 100%;
+    }
+    #cancel-search.show {
+        display: flex;
+        margin-left: 1em;
+        margin-right: 0;
+    }
+    body.disabled {
+        overflow-y: hidden;
     }
     .left-content .ui.segments {
         overflow-x: hidden;
@@ -290,7 +403,7 @@ figure {
         left: -4em !important;
     }
     .timeline .time-point {
-        left: -3.9em !important;
+        left: -3.95em !important;
     }
     .timeline a.timeline-item-title {
         font-size: 1em !important;
@@ -298,7 +411,11 @@ figure {
     }
     .timeline a.timeline-item-section {
         font-size: 0.3em !important;
-        left: -7.8em !important;
+        left: 0 !important;
+    }
+    .back-top {
+        width: 2.5em !important;
+        height: 2.5em !important;
     }
 }
 
@@ -633,8 +750,8 @@ figure {
     position: fixed;
     right: 2em;
     bottom: -100%;
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     padding: 0;
     color: #8d9eb3;
     cursor: pointer;
