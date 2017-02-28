@@ -382,6 +382,12 @@ figure {
     }
 }
 
+@media (max-width: 600px) {
+    #article-tags {
+        display: none;
+    }
+}
+
 @media (max-width: 480px) {
     #word-count,
     #article-tags {
@@ -535,9 +541,14 @@ figure {
 }
 
 #word-count,
+#comment-count,
 #article-tags {
     padding-left: 0.6em;
     border-left: 1px solid #d3d9e6;
+}
+
+#comment-count a {
+    color: #6c768c;
 }
 
 #article-tag {

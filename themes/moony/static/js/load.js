@@ -81,7 +81,7 @@ MathJax.Hub.Queue(function() {
     }
 });
 
-if ($(".ds-thread").length != 0) {
+if ($(".ds-thread").length != 0 || $(".ds-thread-count").length != 0) {
     var duoshuoQuery = { short_name: "campanula" };
     (function() {
         var ds = document.createElement('script');
