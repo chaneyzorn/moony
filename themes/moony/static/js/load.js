@@ -81,6 +81,7 @@ MathJax.Hub.Queue(function() {
     }
 });
 
+// 多说评论
 if ($(".ds-thread").length != 0 || $(".ds-thread-count").length != 0) {
     var duoshuoQuery = { short_name: "campanula" };
     (function() {
