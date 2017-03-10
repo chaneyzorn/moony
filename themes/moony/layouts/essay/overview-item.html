@@ -17,5 +17,5 @@
             {{ end }}
         </div>
     </div>
-    <div id="article-content" class="ui segment">{{ .Summary }}</div>
+    <div id="article-content" class="ui segment overview">{{ .Summary }}{{ if .Truncated }}...{{ end }}</div>
 </div>

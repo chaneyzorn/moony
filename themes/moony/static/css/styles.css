@@ -575,10 +575,16 @@ figure {
     margin: 1.2em 0;
 }
 
-#article-content p {
+#article-content:not(.overview) p {
     font-size: 1em;
     line-height: 2em;
     margin: 2em 0;
+}
+
+#article-content.overview p {
+    font-size: 1em;
+    line-height: 2em;
+    margin: 0;
 }
 
 
