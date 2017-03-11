@@ -1,3 +1,4 @@
+
 /*全局*/
 
 body {
@@ -1230,4 +1231,35 @@ body.lg-on {
 
 .lg-sub-html p {
     margin: 0;
+}
+
+
+/*打印样式*/
+
+@media print {
+    @page{
+        margin-top: 4em;
+        margin-bottom: 4em;
+    }
+    body {
+        background-color: #ffffff;
+    }
+    header,
+    #session-link,
+    #comment-count,
+    #TOC-container,
+    #sidebar,
+    .right-content,
+    #comments,
+    #back-top {
+        display: none;
+    }
+    .main.content {
+        width: 100%;
+        margin-top: initial;
+    }
+    .ui.segments {
+        border: none;
+        box-shadow: none;
+    }
 }
