@@ -1,0 +1,48 @@
+p {
+    line-height: 1.5em !important;
+}
+
+#header-title {
+    text-align: center;
+}
+
+#base-info p {
+    display: inline-block;
+    width: 45%;
+}
+
+.ui.segment,
+.ui.segments,
+.segment {
+    border: none !important;
+    box-shadow: none;
+}
+
+.ui.warning.message {
+    box-shadow: none;
+}
+
+@media print {
+    @page {
+        margin-top: 4em;
+        margin-bottom: 4em;
+        margin-left: 5em;
+        margin-right: -2em;
+    }
+    body {
+        background-color: #ffffff;
+    }
+    .main.content {
+        width: 80%;
+        margin-top: initial;
+    }
+    .ui.segment,
+    .ui.segments,
+    .segment {
+        border: none !important;
+        box-shadow: none;
+    }
+    .ui.warning.message {
+        box-shadow: none;
+    }
+}
