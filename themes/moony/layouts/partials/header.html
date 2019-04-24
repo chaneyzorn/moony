@@ -5,8 +5,13 @@
                 <a id="brand" class="item mobile" href="/">
                     <b><i class="home icon"></i>{{ .Site.Title }}</b>
                 </a>
-                <div class="ui dropdown item">
-                    <a href="/archive/"><i class="archive icon"></i> 文章 <span class="ui label">{{ len (where $.Site.Pages "Type" "in" "tech essay") }}</span></a>
+                <!-- <div class="ui dropdown item">
+                    <a href="/archive/">
+                        <i class="archive icon"></i> 文章
+                        <span class="ui label">
+                            {{ len (where $.Site.Pages "Type" "in" "tech essay") }}
+                        </span>
+                    </a>
                     <div class="menu">
                         <div class="header"><a href="/tech/"><i class="desktop icon"></i> 技术</a></div>
                         <div class="divider"></div>
@@ -18,19 +23,7 @@
                         <a class="disabled item">流光</a>
                         <a class="disabled item">无想</a>
                     </div>
-                </div>
-                <div class="ui dropdown disabled item" href="/">
-                    <a href="/topics/"><i class="block layout icon"></i> 专题 <span class="ui label">{{ len .Site.Taxonomies.series }}</span></a>
-                    <div class="menu">
-                        <div class="disabled item">暂无</div>
-                    </div>
-                </div>
-                <div class="ui dropdown disabled item" href="/">
-                    <a href="/projects/"><i class="github alternate icon"></i> 项目 <span class="ui label">{{ len .Site.Taxonomies.projects }}</span></a>
-                    <div class="menu">
-                        <div class="disabled item">暂无</div>
-                    </div>
-                </div>
+                </div> -->
                 <a class="ui dropdown disabled item" href="/">
                     <i class="user icon"></i><span class="text">关于</span>
                 </a>

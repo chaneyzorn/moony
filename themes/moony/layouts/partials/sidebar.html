@@ -36,7 +36,8 @@
         <div class="ui horizontal list">
             {{ range $key, $value := $.Site.Taxonomies.tags }}
             <div class="item">
-                <i class="tag icon"></i><a href="/tags/{{ $key | urlize }}/">{{ $key }}<sup>{{ len $value }}</sup></a>
+                <i class="tag icon"></i>
+                <a href="/tags/{{ $key | urlize }}/">{{ $key }}<sup>{{ len $value }}</sup></a>
             </div>
             {{ end }}
         </div>
