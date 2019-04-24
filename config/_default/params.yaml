@@ -1,0 +1,6 @@
+# 使用 .Site.Params 访问
+# 参见： https://gohugo.io/variables/site/#the-site-params-variable
+
+author: ChaneyZorn
+dateformat: "2006-01-02 15:04" # Optional
+debug: false

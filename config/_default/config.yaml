@@ -1,0 +1,43 @@
+# 网站基本信息
+# 参见： https://gohugo.io/getting-started/configuration/
+title: "ChaneyZorn"
+baseURL: "http://moonye.me/"
+
+# 默认语言配置
+languageCode: "zh-cn"
+defaultContentLanguage: "zh-cn"
+hasCJKLanguage: true
+
+# 博客内容设定
+watch: true
+theme: "moony"
+metaDataFormat: "yaml"
+
+paginate: 8
+paginatePath: page
+enableEmoji: false
+enableGitInfo: true
+enableInlineShortcodes: true
+
+disableKinds:
+  - taxonomyTerm
+
+taxonomies:
+  tag: "tags"
+
+# markdown 渲染选项
+# 参见 https://gohugo.io/getting-started/configuration/#blackfriday-extensions
+blackfriday:
+  hrefTargetBlank: true
+  extensions:
+    - hardLineBreak
+
+related:
+  threshold: 80
+  includeNewer: false
+  toLower: false
+  indices:
+  - name: keywords
+    weight: 100
+  - name: date
+    weight: 10
