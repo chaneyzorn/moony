@@ -1,4 +1,3 @@
-
 /*全局*/
 
 body {
@@ -6,18 +5,12 @@ body {
     background-color: #f3f3f3;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     color: #494949;
     margin: 0;
 }
 
-a,
-a:hover {
+a, a:hover {
     color: black;
 }
 
@@ -34,7 +27,6 @@ ul {
 figure {
     margin: 1em 0;
 }
-
 
 /*载入、刷新效果*/
 
@@ -143,7 +135,6 @@ figure {
         animation: arise 0.5s 0.1s forwards ease-in-out;
     }
 }
-
 
 /*导航栏*/
 
@@ -268,7 +259,6 @@ figure {
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
 
-
 /*搜索框*/
 
 #search {
@@ -327,7 +317,6 @@ figure {
     font-size: 2em;
 }
 
-
 /*中央主页*/
 
 .main.content {
@@ -343,8 +332,7 @@ figure {
     transition: 0.5s ease-in-out;
 }
 
-#TOC,
-#main-content {
+#TOC, #main-content {
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
@@ -390,8 +378,7 @@ figure {
 }
 
 @media (max-width: 480px) {
-    #word-count,
-    #article-tags {
+    #word-count, #article-tags {
         display: none;
     }
     .lg-img .center {
@@ -427,29 +414,25 @@ figure {
 }
 
 @media (min-width: 0) {
-    #TOC,
-    #main-content {
+    #TOC, #main-content {
         width: 300px;
     }
 }
 
 @media (min-width: 300px) {
-    #TOC,
-    #main-content {
+    #TOC, #main-content {
         width: 100%;
     }
 }
 
 @media (min-width: 720px) {
-    #TOC,
-    #main-content {
+    #TOC, #main-content {
         width: 720px;
     }
 }
 
 @media (min-width: 980px) {
-    #TOC,
-    #main-content {
+    #TOC, #main-content {
         width: 980px;
     }
     #nav-menu {
@@ -457,7 +440,6 @@ figure {
         padding-right: 10%;
     }
 }
-
 
 /*左右页面*/
 
@@ -493,7 +475,6 @@ figure {
     }
 }
 
-
 /*文章条目*/
 
 .ui.segments {
@@ -526,9 +507,30 @@ figure {
 
 #session-link {
     position: absolute;
-    left: initial;
-    right: -5.6em;
-    box-shadow: 0 1px 10px rgba(0, 37, 55, .25);
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 100%;
+    min-width: 4em;
+    font-size: 1em;
+    text-align: center;
+    border-top-left-radius: 0.2em;
+    border-bottom-left-radius: 0.2em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#session-link:before {
+    position: absolute;
+    transform: translateY(-50%) translateX(50%) rotate(-45deg);
+    top: 50%;
+    right: 99%;
+    content: '';
+    background-color: inherit;
+    background-image: none;
+    width: 1.42em;
+    height: 1.42em;
+    border-radius: 0.1em;
 }
 
 #title-link {
@@ -541,9 +543,7 @@ figure {
     background: #f7f8fa;
 }
 
-#word-count,
-#comment-count,
-#article-tags {
+#word-count, #comment-count, #article-tags {
     padding-left: 0.6em;
     border-left: 1px solid #d3d9e6;
 }
@@ -557,7 +557,6 @@ figure {
     color: #6c768c;
 }
 
-
 /*文章内容*/
 
 #article-content {
@@ -567,12 +566,7 @@ figure {
     padding-bottom: 0.8em;
 }
 
-#article-content h1,
-#article-content h2,
-#article-content h3,
-#article-content h4,
-#article-content h5,
-#article-content h6 {
+#article-content h1, #article-content h2, #article-content h3, #article-content h4, #article-content h5, #article-content h6 {
     margin: 1.2em 0;
 }
 
@@ -588,7 +582,6 @@ figure {
     margin: 0;
 }
 
-
 /*文章目录*/
 
 #TOC-container.toc-show {
@@ -599,8 +592,7 @@ figure {
     bottom: 4.5em;
 }
 
-#sidebar,
-#sidebar.sidebar-show {
+#sidebar, #sidebar.sidebar-show {
     animation: downSliding 0.5s forwards ease-in-out;
 }
 
@@ -640,16 +632,14 @@ figure {
     margin: 0;
 }
 
-#TableOfContents .content,
-#TableOfContents a.last-level {
+#TableOfContents .content, #TableOfContents a.last-level {
     padding-left: 2.5em;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
     margin: 0;
 }
 
-#TableOfContents .title.active.curr a,
-#TableOfContents a.last-level.curr {
+#TableOfContents .title.active.curr a, #TableOfContents a.last-level.curr {
     color: #373277;
     font-weight: bold;
 }
@@ -666,7 +656,6 @@ figure {
     }
 }
 
-
 /*分页器*/
 
 #nav-pagination {
@@ -676,7 +665,6 @@ figure {
 #nav-pagination>.ui.buttons {
     box-shadow: 0 1px 3px rgba(0, 37, 55, .05);
 }
-
 
 /*页脚*/
 
@@ -693,13 +681,11 @@ figure {
     margin-top: 0.6em;
 }
 
-
 /*侧栏*/
 
 #card-header {
     background-color: #ffffff;
 }
-
 
 /*简介卡片*/
 
@@ -722,8 +708,7 @@ figure {
     transition: 0.2s ease;
 }
 
-#social-icons i:hover,
-#social-icons svg:hover {
+#social-icons i:hover, #social-icons svg:hover {
     transform: scale(1.2);
 }
 
@@ -733,7 +718,6 @@ figure {
     fill: #000000;
     transition: 0.2s ease;
 }
-
 
 /*标签云*/
 
@@ -753,14 +737,11 @@ figure {
     background: none;
 }
 
-
 /*友链*/
 
-#friend-link,
-#friend-link a {
+#friend-link, #friend-link a {
     color: #767676;
 }
-
 
 /*返回顶部*/
 
@@ -796,7 +777,6 @@ figure {
 .show-on {
     bottom: 2em;
 }
-
 
 /*归档时间线页面*/
 
@@ -895,7 +875,6 @@ figure {
     box-shadow: 0 1px 3px rgba(0, 37, 55, .25);
 }
 
-
 /*404页面*/
 
 .page404 {
@@ -928,30 +907,27 @@ figure {
     display: initial;
 }
 
-
 /*装饰特效*/
 
-.underline a,
-#article-content a {
+.underline a, #article-content a {
     display: inline-block;
 }
 
-.underline a:after,
-#article-content a:after {
+.underline a:after, #article-content a:after {
     content: "";
     display: block;
+    position: relative;
+    left: 50%;
+    width: 0;
     height: 1px;
+    background-color: #2185d0;
+    transition: all 0.3s cubic-bezier(0, 0.6, 0.5, 1.35);
+}
+
+.underline a:hover:after, #article-content a:hover:after {
+    left: 0;
     width: 100%;
-    background-color: #6c768c;
-    transform: scale(0);
-    transition: all 0.5s cubic-bezier(0, 0.6, 0.5, 1.35);
 }
-
-.underline a:hover:after,
-#article-content a:hover:after {
-    transform: scale(1);
-}
-
 
 /*载入特效*/
 
@@ -1068,9 +1044,7 @@ figure {
     }
 }
 
-
 /*Markdown样式*/
-
 
 /*代码*/
 
@@ -1115,7 +1089,6 @@ figure {
     border-bottom-right-radius: 4px;
 }
 
-
 /*行内代码*/
 
 code {
@@ -1127,14 +1100,12 @@ code {
     margin: 0 0.1em;
 }
 
-
 /*分割线*/
 
 hr {
     border: 0;
     border-bottom: 1px dashed #cfcfcf;
 }
-
 
 /*引用*/
 
@@ -1149,7 +1120,6 @@ blockquote {
     border-left-color: #e8e8e8;
 }
 
-
 /*链接*/
 
 #article-content a {
@@ -1161,7 +1131,6 @@ blockquote {
     border-bottom-color: rgba(255, 255, 255, 0);
     transition: all 0.5s ease-in-out;
 }
-
 
 /*MathJax 公式*/
 
@@ -1177,7 +1146,6 @@ code.mathjax {
     background: initial;
     border: initial;
 }
-
 
 /*图片*/
 
@@ -1233,25 +1201,17 @@ body.lg-on {
     margin: 0;
 }
 
-
 /*打印样式*/
 
 @media print {
-    @page{
+    @page {
         margin-top: 4em;
         margin-bottom: 4em;
     }
     body {
         background-color: #ffffff;
     }
-    header,
-    #session-link,
-    #comment-count,
-    #TOC-container,
-    #sidebar,
-    .right-content,
-    #comments,
-    #back-top {
+    header, #session-link, #comment-count, #TOC-container, #sidebar, .right-content, #comments, #back-top {
         display: none;
     }
     .main.content {

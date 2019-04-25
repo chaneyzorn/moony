@@ -1,18 +1,27 @@
 <div class="ui segments">
     <div class="ui segment">
-        <a id="session-link" class="ui blue right ribbon label" href="/tech/">技术</a>
         <h1>{{ .Title }}</h1>
     </div>
     <div id="article-info" class="ui segment">
         <div class="ui breadcrumb">
-            <div class="section"><i class="calendar icon"></i> {{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</div>
-            <div id="word-count" class="section"><i class="file word outline icon"></i><span>{{ .WordCount }} 字</span></div>
-            <div id="comment-count" class="section underline"><i class="comments icon"></i><a href="{{ .Permalink }}#comments"><span class="ds-thread-count" data-thread-key="{{ .UniqueID }}" data-count-type="comments"></span></a></div>
+            <div class="section">
+                <i class="calendar icon"></i>
+                {{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}
+            </div>
+            <div id="word-count" class="section">
+                <i class="file word outline icon"></i>
+                <span>{{ .WordCount }} 字</span>
+            </div>
             {{ with .Params.tags }}
             <div id="article-tags" class="section underline">
-                {{ range . }}<i class="tag icon"></i><a id="article-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a> {{ end }}
+                {{ range . }}<i class="tag icon"></i>
+                <a id="article-tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
             </div>
             {{ end }}
+            <a id="session-link" href="/tech/" class="ui blue horizontal label">
+                技术
+            </a>
         </div>
     </div>
     <div id="article-content" class="ui segment">{{ .Content }}</div>

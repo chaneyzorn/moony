@@ -1,7 +1,6 @@
 <div class="ui segments">
     <div id="article-header" class="ui segment">
         <a href="{{ .Permalink }}">
-            <a id="session-link" class="ui blue right ribbon label" href="/tech/">技术</a>
             <a id="title-link" href="{{ .Permalink }}">
                 <h1>{{ .Title }}</h1>
             </a>
@@ -17,12 +16,6 @@
                 <i class="file word outline icon"></i>
                 <span>{{ .WordCount }} 字</span>
             </div>
-            <!-- <div id="comment-count" class="section underline">
-                <i class="comments icon"></i>
-                <a href="{{ .Permalink }}#comments">
-                    <span class="ds-thread-count" data-thread-key="{{ .UniqueID }}" data-count-type="comments"></span>
-                </a>
-            </div> -->
             {{ with .Params.tags }}
             <div id="article-tags" class="section underline">
                 {{ range . }}
@@ -31,6 +24,9 @@
                 {{ end }}
             </div>
             {{ end }}
+            <a id="session-link" href="/tech/" class="ui blue horizontal label">
+                技术
+            </a>
         </div>
     </div>
     <div id="article-content" class="ui segment overview">{{ .Summary }}{{ if .Truncated }}...{{ end }}</div>
