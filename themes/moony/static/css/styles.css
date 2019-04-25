@@ -241,6 +241,10 @@ figure {
     animation-name: slideUp
 }
 
+#brand {
+    color: #277bba;
+}
+
 .ui.menu {
     font-size: 1.1rem;
 }
@@ -266,6 +270,7 @@ figure {
     float: right;
     flex-grow: 1;
     margin-left: auto;
+    max-width: 30em;
 }
 
 #search-input {

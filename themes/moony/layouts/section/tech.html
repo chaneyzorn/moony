@@ -1,11 +1,11 @@
 {{ define "title" }}
-<title>分类：技术 | {{ .Site.Title }}</title>
+<title>分类：编程 | {{ .Site.Title }}</title>
 {{ end }}
 
 {{ define "main" }}
 <div id="main-content">
     <div class="left-content">
-        <h1><i class="desktop icon"></i> 技术</h1>
+        <h1><i class="desktop icon"></i> 编程</h1>
         {{ range .Paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" .Paginator }}

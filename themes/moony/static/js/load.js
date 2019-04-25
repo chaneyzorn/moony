@@ -30,10 +30,12 @@ $('.lg-img').dimmer({
 });
 
 // 返回顶部按钮及回滚顶部
-$(window).on('scroll', function() {
+// 依赖于 velocity v1 版本，v2 版本接口发生了变化并且效果不佳
+// 可以参考 ant-design back-top
+$(window).on('scroll', function () {
     $('.back-top').toggleClass('show-on', window.pageYOffset > 50);
 });
-$('.back-top').on('click', function() {
+$('.back-top').on('click', function () {
     $('html').velocity("scroll", {
         duration: 1000,
         easing: [25, 10]
@@ -70,7 +72,7 @@ MathJax.Hub.Config({
     }
 });
 
-MathJax.Hub.Queue(function() {
+MathJax.Hub.Queue(function () {
     // Fix <code> tags after MathJax finishes running. This is a
     // hack to overcome a shortcoming of Markdown. Discussion at
     // https://github.com/mojombo/jekyll/issues/199
