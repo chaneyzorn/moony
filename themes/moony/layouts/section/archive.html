@@ -10,7 +10,7 @@
     <div class="left-content">
         <div id="archive-timeline" class="ui segment">
             <div class="timeline">
-                {{ $paginator := .Paginate (where $.Site.Pages "Type" "in" "tech essay") 10 }}
+                {{ $paginator := .Paginate (where $.Site.RegularPages "Type" "in" "tech essay") 10 }}
                 {{ range $paginator.Pages.GroupByDate "2006" }}
                 <div class="timeline-item-year">{{ .Key }}</div>
                 {{ range .Pages }}
