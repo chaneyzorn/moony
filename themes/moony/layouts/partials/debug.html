@@ -10,6 +10,10 @@
         {{ printf "%#v" .Kind }}
         <div class="header">.Data</div>
         {{ printf "%#v" .Data }}
+        <div class="header">.Site.Pages</div>
+        {{ range .Site.Pages }}
+        {{.Title }} {{ .Type }}
+        {{ end }}
         <div class="header">.Site.Sections</div>
         {{ printf "%#v" .Site.Sections }}
     </div>
@@ -23,7 +27,11 @@
         <div class="header">.Paginator.TotalNumberOfElements</div>
         {{ printf "%#v" .TotalNumberOfElements }}
         <div class="header">.Paginator.Pages</div>
-        {{ printf "%#v" .Pages }}
+        <div class="ui list">
+            {{ range .Pages }}
+            <div class="item">{{.Title }} | {{ .Type }} | {{ .Kind }} | {{ .File.Path }} | {{ .File.Dir }}</div>
+            {{ end }}
+        </div>
         <div class="header">.Paginator.Pagers</div>
         {{ printf "%#v" .Pagers }}
         <!---->
