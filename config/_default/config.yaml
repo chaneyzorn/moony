@@ -1,7 +1,7 @@
 # 网站基本信息
 # 参见： https://gohugo.io/getting-started/configuration/
 title: "ChaneyZorn"
-baseURL: "http://moonye.me/"
+baseURL: "https://campanula.github.io/"
 
 # 默认语言配置
 languageCode: "zh-cn"

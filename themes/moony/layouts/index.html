@@ -4,13 +4,13 @@
 {{ end }}
 
 {{ define "title" }}
-    <title>{{ .Site.Title }} | 何夜无月，逝者如斯</title>
+<title>{{ .Site.Title }} | 何夜无月，逝者如斯</title>
 {{ end }}
 
 {{ define "main" }}
 <div id="main-content">
     <div class="left-content">
-        {{ $paginator := .Paginate (where $.Site.Pages "Type" "in" "tech essay") }}
+        {{ $paginator := .Paginate (where $.Site.RegularPages "Type" "in" "tech essay") }}
         {{ range $paginator.Pages }} {{ .Render "overview-item" }} {{ end }}
         <!---->
         {{ partial "pagination.html" $paginator }}
